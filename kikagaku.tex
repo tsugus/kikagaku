@@ -1,0 +1,54 @@
+\documentclass[dvipdfmx,12pt]{jsreport}
+
+\usepackage[
+  a5paper, % A5判に設定
+  top=20mm, % 上余白を20mmに設定
+  bottom=20mm, % 下余白を20mmに設定
+  left=20mm, % 左余白を20mmに設定
+  right=20mm % 右余白を20mmに設定
+]{geometry}
+
+\usepackage{makeidx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bm}
+
+\makeindex
+\theoremstyle{definition}
+\newtheorem{dfn}{定義}
+\newtheorem*{dfn*}{定義}
+\theoremstyle{plain}
+\newtheorem{axm}{公理}
+\newtheorem*{axm*}{公理}
+\newtheorem{thm}{定理}
+\newtheorem*{thm*}{定理}
+\newtheorem{col}{系}
+\newtheorem*{col*}{系}
+\newtheorem{lmm}{補題}
+\newtheorem*{lmm*}{補題}
+
+\renewcommand{\proofname}{\textbf{証明}}
+
+\title{初等幾何学の現代的公理系}
+\date{2025.10.26\\02:45}
+\author{Tsugu}
+
+\begin{document}
+  \maketitle
+  \input{ch00.tex}
+  \tableofcontents
+  \input{ch01.tex}
+  \input{ch02.tex}
+  \input{ch03.tex}
+  \input{ch04.tex}
+  \input{ch05.tex}
+  \input{ch06.tex}
+  \input{ch07.tex}
+  \begin{thebibliography}{99}
+    \bibitem{seki} 赤攝也.『現代の初等幾何学』(ちくま学芸文庫). 筑摩書房, 2019.
+    \bibitem{tajima} 田島一郎.『イプシロン−デルタ』(数学ワンポイント双書). 共立出版株式会社, 2018.
+  \end{thebibliography}
+  \clearpage
+  \printindex
+\end{document}

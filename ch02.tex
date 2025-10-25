@@ -1,0 +1,91 @@
+\chapter{ベクトルに関する定理}
+
+\begin{thm}\label{theorem:1}
+  \(\vec{a},\ \vec{b}\) を任意のベクトルとするとき、
+  \[\vec{a}+\vec{x}=\vec{b}\]
+  を満たすベクトル \(\vec{x}\) がただ一つ存在する。
+\end{thm}
+
+\begin{proof}
+  \(\vec{x}=(-\vec{a})+\vec{b}\) とおくと、
+  \begin{align*}
+    \vec{a}+\vec{x} &= \vec{a}+\{(-\vec{a})+\vec{b}\}=\{\vec{a}+(-\vec{a})\}+\vec{b} \\
+                    &= \vec{0}+\vec{b}=\vec{b}.
+  \end{align*}
+  ゆえに、\(\vec{x}\) は存在する。
+
+  次に、\(\vec{a}+\vec{y}=\vec{b}\) となる \(\vec{y}\) があるとすると、
+  \begin{align*}
+               \vec{a}+\vec{x} &= \vec{a}+\vec{y} \\
+    -\vec{a}+(\vec{a}+\vec{x}) &= -\vec{a}+(\vec{a}+\vec{y}) \\
+    (-\vec{a}+\vec{a})+\vec{x} &= (-\vec{a}+\vec{a})+\vec{y} \\
+               \vec{0}+\vec{x} &= \vec{0}+\vec{y} \\
+                       \vec{x} &= \vec{y}.
+  \end{align*}
+  ゆえに、\(\vec{x}\) はただ一つ。
+\end{proof}
+
+\begin{dfn}
+  \(\vec{a}+\vec{x}=\vec{b}\) を満たすベクトル \(\vec{x}\) を
+  \[\vec{a}-\vec{b}\]
+  と表す。
+\end{dfn}
+
+\begin{thm}\label{theorem:2}
+  \(0\vec{a}=\vec{0}.\)
+\end{thm}
+
+\begin{proof}
+  まず、
+  \[0\vec{a}+0\vec{a}=(0+0)\vec{a}=0\vec{a}.\]
+  また、
+  \[0\vec{a}+\vec{0}=0\vec{a}.\]
+  ゆえに、定理 \ref{theorem:1} より
+  \[0\vec{a}=0.\]
+\end{proof}
+
+\begin{thm}\label{theorem:3}
+  \(\lambda\vec{0}=\vec{0}.\)
+\end{thm}
+
+\begin{proof}
+  まず、
+  \[\lambda\vec{0}+\lambda\vec{0}=\lambda(\vec{0}+\vec{0})=\lambda\vec{0}.\]
+  また、
+  \[\lambda\vec{0}+\vec{0}=\lambda\vec{0}.\]
+  ゆえに、定理 \ref{theorem:1} より
+  \[\lambda\vec{0}=\vec{0}.\]
+\end{proof}
+
+\begin{thm}\label{theorem:4}
+  \((-1)\vec{a}=-\vec{a}.\)
+\end{thm}
+
+\begin{proof}
+  まず、
+  \begin{align*}
+    \vec{a}+(-1)\vec{a} &= 1\vec{a}+(-1)\vec{a}=\{1+(-1)\}\vec{a} \\
+                        &= 0\vec{a}=\vec{0}.
+  \end{align*}
+  また、
+  \[\vec{a}+(-\vec{a})=\vec{0}.\]
+  ゆえに、定理 \ref{theorem:1} より
+  \[(-1)\vec{a}=-\vec{a}.\]
+\end{proof}
+
+\begin{thm}\label{theorem:5}
+  \(\lambda\vec{a}=\vec{0}\) であるための必要十分条件は、\(\lambda=0\) または \(\vec{a}=\vec{0}.\)
+\end{thm}
+
+\begin{proof}
+  まず、必要条件であることを示す。
+  \(\lambda=0\) ならばそれでよし、ゆえに \(\lambda\neq0\) とすると、
+  \begin{align*}
+               \frac{1}{\lambda}(\lambda\vec{a}) &= \frac{1}{\lambda}\vec{0} \\
+    \left(\frac{1}{\lambda}\lambda\right)\vec{a} &= \vec{0} \\
+                                        1\vec{a} &= \vec{0} \\
+                                         \vec{a} &= \vec{0}.
+  \end{align*}
+  次に、十分条件であることを示す。
+  これは定理 \ref{theorem:2} と \ref{theorem:3} より明らか。
+\end{proof}

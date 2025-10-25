@@ -1,0 +1,162 @@
+\chapter{角の大きさの公理から導かれる定理}
+
+\begin{thm}\label{theorem:31}
+  零角の大きさは \(0\) である。
+\end{thm}
+
+\begin{proof}
+  どのような \(\angle{hh}\) に対しても適当に \(\angle{hk}\) を選べば、
+  \[\overline{\angle{hh}}+\overline{\angle{hk}}=\overline{\angle{hk}}.\]
+  ゆえに
+  \[\overline{\angle{hh}}=\overline{\angle{hk}}-\overline{\angle{hk}}=0.\]
+\end{proof}
+
+\begin{thm}\label{theorem:32}
+  周角の大きさはみな等しい。
+\end{thm}
+
+\begin{proof}
+  なぜならば周角は、辺はいろいろな場合があれど、実体は平面なのでただ一つだからである。
+\end{proof}
+
+\begin{dfn}[ベクトルのなす角]\label{definition:26}
+  零ベクトルでない二つのベクトルについて、それらと与えられた任意の点 \(O\) をもとに作られる、端点 \(O\) の半直線を二つの辺とする零角または凸角または平角を、点 \(O\) に関する\textbf{ベクトルのなす角}\index{べくとるのなすかく@ベクトルのなす角}という。
+  点を具体的に指定しなくても差し支えがない場合、点 \(O\) は省略される。
+\end{dfn}
+
+\begin{thm}\label{theorem:33}
+  点に関するベクトルのなす角は、点によらずどれもその大きさが一定である。
+\end{thm}
+
+\begin{proof}
+  公理 \ref{axiom:18} より明らか。
+\end{proof}
+
+\begin{dfn}[直角]\label{definition:27}
+  互いに垂直な二つのベクトルのなす角を\textbf{直角}\index{ちょっかく@直角}という。
+\end{dfn}
+
+\begin{thm}\label{theorem:34}
+  直角の大きさはみな等しく、周角のそれの四分の一である。
+\end{thm}
+
+\begin{proof}
+  \(\vec{a}\perp\vec{b}\) ならば、定理 \ref{theorem:13} より
+  \begin{align*}
+    \|\vec{b}-\vec{a}\| &= \|\vec{b}+(-\vec{a})\| \\
+                        &= \|\vec{b}\|^2+\|-\vec{a}\|^2= \|\vec{b}\|^2+\|\vec{a}\|^2.
+  \end{align*}
+  ゆえに、直角にいわば対するベクトルのノルムは、直角を挟むベクトルの二つのノルムだけで決まる。
+
+  つまり、どの直角においても、それを挟むベクトルのノルムを適切に調節して長さをそろえれば、直角に対するベクトルはどれもノルムが等しいことが分かる。
+  ゆえに、公理 \ref{axiom:18} より、どの直角も同じ大きさである。
+
+  そして、垂直に交わる二直線によってできる四つの直角を考えれば、定理の後半が成り立つことが分かる。
+\end{proof}
+
+\begin{thm}\label{theorem:35}
+  平角の大きさはみな等しく、周角のそれの半分である。
+\end{thm}
+
+\begin{proof}
+  平角の辺に対して垂直な半直線を立てれば、明らかに平角は二つの直角を合わせたものである。
+\end{proof}
+
+\begin{dfn}[鋭角、鈍角]\label{definition:28}
+  直角より小さい角を\textbf{鋭角}\index{えいかく@鋭角}という。
+  直角より大きい角を\textbf{鈍角}\index{どんかく@鈍角}という。
+  ただし、平角より大きい角は含まない。
+\end{dfn}
+
+\begin{lmm}\label{lemma:1}
+ \(\vec{a},\ \vec{b}\) が零ベクトルでなく、互いに平行でもないとき、\(\|\vec{a}\|=\|\vec{b}\|\) ならば、\(\vec{a}+\vec{b}\) と任意の点 \(O\) から作られる半直線は、\(O\) に関する \(\vec{x}\) と \(\vec{y}\) のなす角を二等分する。
+\end{lmm}
+
+\begin{proof}
+  定理 \ref{theorem:26} より \(\vec{a}+\vec{b}\neq\vec{0}.\)
+
+  ここで \(\overrightarrow{OA}=\vec{a},\) \(\overrightarrow{OB}=\vec{b},\) \(\overrightarrow{OC}=\vec{a}+\vec{b}\) とおくと、点 \(C\) は 直線 \(OA\) をへりとし点 \(B\) を含む半平面にあり、直線 \(OB\) をへりとし点 \(A\) を含む半平面にもある。
+  ゆえに、点 \(C\) は 凸角 \(AOB\) に含まれ、\(\angle{AOC},\ \angle{BOC}\) は \(\angle{AOB}\) の部分である。
+
+  そして、
+  \[\overrightarrow{AC}=\vec{b},\quad \overrightarrow{BC}=\vec{b},\quad \|\vec{a}\|=\|\vec{b}\|.\]
+
+  ゆえに、公理 \ref{axiom:18} より \(\angle{AOC}=\angle{BOC}.\)
+  すなわち、半直線 \(OC\) は \(\angle{AOB}\) を二等分する。
+\end{proof}
+
+\begin{lmm}\label{lemma:2}
+ \(\vec{a},\ \vec{b}\) が零ベクトルでなく、互いに平行でもないとき、
+ \[\vec{a}+\frac{\|\vec{a}\|}{\|\vec{a}\|+\|\vec{b}\|}(\vec{b}-\vec{a})\]
+ と任意の点 \(O\) から作られる半直線は、\(O\) に関する \(\vec{a}\) と \(\vec{b}\) のなす角を二等分する。
+\end{lmm}
+
+\begin{proof}
+  \[\vec{c}=\vec{a}+\frac{\|\vec{a}\|}{\|\vec{a}\|+\|\vec{b}\|}(\vec{b}-\vec{a})\]
+  とおくと、
+  \[\vec{c}=\frac{\|\vec{b}\|}{\|\vec{a}\|+\|\vec{b}\|}\left(\vec{a}+\|\vec{a}\|\cdot\frac{\vec{b}}{\|\vec{b}\|}\right).\]
+  ここで \(\displaystyle \frac{\vec{b}}{\|\vec{b}\|}\) のノルムは \(1.\)
+  ゆえに、\(\vec{c}\) に補題 \ref{lemma:1} が適用できて、当補題が成り立つ。
+\end{proof}
+
+\begin{thm}\label{theorem:36}
+ 周角の大きさより小さい正の実数には、それを自らの大きさとする角が必ず存在する。
+\end{thm}
+
+\begin{proof}
+  まず、鋭角について成り立つことを示す。
+  零ベクトルでない互いに垂直なベクトルを \(\vec{a},\ \vec{b}\) とし、\(\vec{a}\) と
+  \[\vec{a}+\lambda(\vec{b}-\vec{a}) \quad (0\leqq\lambda\leqq1)\]
+  のなす角について考える。
+
+  さて、もし \(\vec{a}+\lambda(\vec{b}-\vec{a})=\vec{0}\) だとすると \((1-\lambda)\vec{a}+\lambda\vec{b}=\vec{0}.\) しかし、定理 \ref{theorem:26} より \(1-\lambda=0\) かつ \(\lambda=0\) となって矛盾。
+
+  したがって、どのような \(\lambda\) にもそれに対応する角がある。
+  さらに、\(\lambda=0\) には零角が、\(\lambda=1\) には直角が対応する。
+  つまり、実数から角の大きさへの関数 \(f\) が存在する。
+
+  ここで \(\delta_0>0\) とし、
+  \begin{gather*}
+    \vec{a}+(\lambda+\delta_0)(\vec{b}-\vec{a}) \quad \text{と} \quad \vec{a}+\lambda(\vec{b}-\vec{a}), \\
+    \vec{a}+\lambda(\vec{b}-\vec{a}) \quad \text{と} \quad \vec{a}+(\lambda-\delta_0)(\vec{b}-\vec{a})
+  \end{gather*}
+  のなす角それぞれを、補題 \ref{lemma:2} を用いて繰り返し二等分していくことを考える。
+  \[\delta_0>\delta_1>\delta_2>\cdots>\delta_n>\cdots>0\]
+  なる値の系列が存在して、公理 \ref{axiom:16}, \ref{axiom:17} より、
+  \begin{align*}
+    f(\lambda+\delta_n)-f(\lambda) &= \frac{f(\lambda+\delta_0)-f(\lambda)}{2^n}>0, \\
+    f(\lambda)-f(\lambda-\delta_n) &= \frac{f(\lambda)-f(\lambda-\delta_0)}{2^n}>0
+  \end{align*}
+  となる。
+  同時に公理 \ref{axiom:16}, \ref{axiom:17} より、
+  \[\lambda-\delta_n<x<\lambda+\delta_n\]
+  ならば
+  \[f(\lambda-\delta_n)<f(x)<f(\lambda+\delta_n)\]
+  である。
+
+  ゆえに、任意の \(\varepsilon>0\) が与えられたとき、十分小さな \(\delta>0\) を選んで、
+  \begin{align*}
+    |x-\lambda|<\delta \quad & \text{ならば} \quad |f(x)-f(\lambda)|<\varepsilon, \\
+          0<x-0<\delta \quad & \text{ならば} \quad |f(x)-f(0)|<\varepsilon, \\
+          0<1-x<\delta \quad & \text{ならば} \quad |f(x)-f(1)|<\varepsilon
+  \end{align*}
+  となるようにできる。
+  すなわち、関数 \(f(\lambda)\) は閉区間 \(0\leqq\lambda\leqq1\) で連続である。
+  なおかつ、\(f(0)\neq f(1).\)
+  よって、実数論における中間値の定理より、\(f(\lambda)\) は \(0\) から直角の大きさまでの間のあらゆる実数値をとる。
+
+  直角より大きい角については、直角いくつかと鋭角一つとに分割すれば、明らかであろう。
+\end{proof}
+
+\begin{dfn}\label{defintion:29}
+  \(\bm{E}\) から \(\bm{E}\) への全単射で、点と点の距離を変えない写像を、等長変換という。
+\end{dfn}
+
+\begin{thm}\label{theorem:37}
+ 等長変換によって移された角は、もとの角と大きさが等しい。
+\end{thm}
+
+\begin{proof}
+  等長変換によってすべての角が角へと移されるのかは別途証明する必要がある。
+  しかし、ともかくも角に移されたのであれば、その大きさが変わらないことは公理 \ref{axiom:18} によって保証される。
+\end{proof}

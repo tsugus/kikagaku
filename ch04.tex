@@ -1,0 +1,99 @@
+\chapter{ユークリッド空間の公理から導かれる定理}
+
+\begin{thm}\label{theorem:16}
+  直線に含まれる異なるどの二点に対しても、それら二点を通る直線はもとのものと一致する。
+\end{thm}
+
+\begin{proof}
+  異なる二点 \(P,\ Q\) について、
+  \[\overrightarrow{AP}=\alpha\overrightarrow{AB},\quad \overrightarrow{AQ}=\beta\overrightarrow{AB} \quad (\alpha\neq\beta)\]
+  とおける。
+
+  さて、
+  \[\overrightarrow{PX}=\lambda\overrightarrow{PQ}\]
+  を満たす X について
+  \[\overrightarrow{AX}-\overrightarrow{AP}=\lambda\overrightarrow{AQ}-\lambda\overrightarrow{AP}.\]
+  ゆえに
+  \begin{align*}
+    \overrightarrow{AX} &= \lambda\overrightarrow{AQ}+(1-\lambda)\overrightarrow{AP} \\
+                        &= \{(\beta-\alpha)\lambda+\alpha\}\overrightarrow{AB}.
+  \end{align*}
+
+  ここで、\(\beta-\alpha\neq0\) であるから、
+  \[(\beta-\alpha)\lambda+\alpha\]
+  は \(\lambda\) を変数とする一次式で、すべての実数値をとる。
+  ゆえに、実数を渡る新たな変数 \(\lambda'\) を用いて、
+  \[\overrightarrow{AX}=\lambda'\overrightarrow{AB}\]
+  と書き改めることができ、これはもとの直線を表す式と本質的に変わらない。
+\end{proof}
+
+\begin{thm}\label{theorem:17}
+  半直線の端点と異なるどの点に対しても、端点とその点とで決まる半直線はもとのものと一致する。
+\end{thm}
+
+\begin{proof}
+  端点と異なる点 \(P\) について、
+  \[\overrightarrow{AP}=\alpha\overrightarrow{AB} \quad (\alpha>0)\]
+  とおける。
+
+  さて、
+  \[\overrightarrow{AX}=\lambda\overrightarrow{AP},\quad \lambda\geqq0\]
+  を満たす X について
+  \[\overrightarrow{AX}=\alpha\lambda\overrightarrow{AB}.\]
+
+  ここで
+  \[\alpha\lambda\]
+  は、負でないすべての実数を渡る。
+  ゆえに
+  \[\overrightarrow{AX}=\lambda'\overrightarrow{AB},\quad \lambda'\geqq0\]
+  とおくことができ、これはもとの半直線を表す式と本質的に同じである。
+\end{proof}
+
+\begin{thm}\label{theorem:18}
+  ある点を含む半平面に含まれるがへりの上にはないどの点に対しても、同一の直線をへりとしその点を含む半平面はもとのものと一致する。
+\end{thm}
+
+\begin{proof}
+  そのような点 \(P\) は
+  \[\overrightarrow{AP}=\alpha\overrightarrow{AB}+\beta\overrightarrow{AC},\quad \beta>0\]
+  と表される。
+
+  ゆえに、新しい半平面は \(\mu\geqq0\) として、ある \(\lambda,\ \mu\) について
+  \begin{align*}
+    \overrightarrow{AX} &= \lambda\overrightarrow{AB}+\mu\overrightarrow{AP} \\
+                        &= \lambda\overrightarrow{AB}+\alpha\mu\overrightarrow{AB}+\beta\mu\overrightarrow{AC} \\
+                        &= (\lambda+\alpha\mu)\overrightarrow{AB}+\beta\mu\overrightarrow{AC}
+  \end{align*}
+  となる点 \(X\) の集合として定義される。
+
+  ここで、\(\lambda\) と \(\mu\) は独立だから、\(\mu\) が動かない場合のみを考えても、\(\lambda+\alpha\mu\) はすべての実数を渡る。
+  \(\beta\mu\) が非負の実数すべてを渡るのは明らか。
+  よって、
+  \[\overrightarrow{AX}=\lambda'\overrightarrow{AB}+\mu'\overrightarrow{AC},\quad \mu'\geqq0\]
+  とおくことができるが、これはもとの半平面を表す式と実質同じである。
+\end{proof}
+
+\begin{thm}\label{theorem:19}
+  ある点を含まない半平面に含まれないどの点に対しても、同一の直線をへりとしその点を含まない半平面はもとのものと一致する。
+\end{thm}
+
+\begin{proof}
+  定理 \ref{theorem:18} の証明における \(\mu\) と \(\mu'\) の正負が反転するだけである。
+\end{proof}
+
+\begin{thm}\label{theorem:20}
+  異なる三点 \(O,\ A,\ B\) が一直線上にあるとき、半直線 \(OA\) と半直線 \(OB\) は一致するか、合わせると直線 \(AB\) になるかのどちらかである。
+\end{thm}
+
+\begin{proof}
+  点 \(B\) は半直線 \(OA\) 上にあるかないかのどちらかである。
+
+  前者ならば、定理 \ref{theorem:17} により半直線 \(OA,\ OB\) は一致する。
+
+  後者ならば、一直線上にあるのだから
+  \[\overrightarrow{OB}=\alpha\overrightarrow{OA},\quad \alpha<0\]
+  である。
+  すると半直線 \(OB\) は、\(\lambda\geqq0,\) \(\lambda'\leqq0\) として
+  \[\overrightarrow{OX}=\lambda\overrightarrow{OB}=\alpha\lambda\overrightarrow{OA}=\lambda'\overrightarrow{OA}\]
+  を満たす \(X\) の集合ということになるので、これが半直線 \(OA\) と合わされば一つの直線と等しくなるのは明らかである。
+\end{proof}

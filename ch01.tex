@@ -1,0 +1,254 @@
+\chapter{初等幾何学の公理系}
+
+\section{定義}
+
+\begin{dfn}[\(\bm{E}\)]\label{definition:1}
+  点というものすべての集合を
+  \[\bm{E}\]
+  と書く。
+  （ここでは、\(\bm{E}\) の元を \(A,\ B,\ C,\ \ldots\) のようにラテン文字の大文字で表し、\(E\) の部分集合を断りなくしばしばラテン文字の小文字で表すことにする。）
+\end{dfn}
+
+\begin{dfn}[\(\bm{V}\)]\label{definition:2}
+  ベクトルというものすべての集合を
+  \[\bm{V}\]
+  と書く。
+  （一般に、\(\bm{V}\) の元を \(\vec{a},\ \vec{b},\ \vec{c},\ \ldots\) のようにラテン文字の小文字の上に右向きの矢印をつけて表す。）
+\end{dfn}
+
+\begin{dfn}[スカラー]\label{definition:3}
+  実数のことをベクトルと区別して\textbf{スカラー}\index{すからー@スカラー}という。
+  （ここでは、スカラーを \(\alpha,\ \beta,\ \gamma,\ \ldots\) のようにギリシャ文字の小文字で表す。）
+\end{dfn}
+
+\begin{dfn}[倍]\label{definition:4}
+  任意のスカラー \(\lambda\) と任意のベクトル \(\vec{a}\) に対して、それらの積 \(\lambda\vec{a}\)（公理 \ref{axiom:5} によってただ一つ存在することが保証される）を、\(\vec{a}\) の \(\lambda\) \textbf{倍}\index{ばい@倍}ともいう。
+\end{dfn}
+
+\begin{dfn}[スカラー倍]\label{definition:5}
+  スカラーとベクトルの積を、ベクトルの\textbf{スカラー倍}\index{すからーばい@スカラー倍}という。
+\end{dfn}
+
+\begin{dfn}[直線、端点]\label{definition:6}
+  異なる任意の二点 \(A,\ B\) に対して、（公理 \ref{axiom:10} の記法の下で）
+  \[\overrightarrow{AX}=\lambda\overrightarrow{AB}\]
+  となる実数 \(\lambda\) が存在する点 \(X\) すべての集合を、点 \(A,\ B\) を通る\textbf{直線}\index{ちょくせん@直線}といい、
+  \[\text{直線} AB\]
+   と表す。
+\end{dfn}
+
+\begin{dfn}[一直線上にある]\label{definition:7}
+  複数の点が同一の直線に含まれうるとき、それらは\textbf{一直線上にある}\index{いっちょくせんじょうにある@一直線上にある}という。
+\end{dfn}
+
+\begin{dfn}[半直線、端点]\label{definition:8}
+  異なる任意の二点 \(A,\ B\) に対して、
+  \[\overrightarrow{AX}=\lambda\overrightarrow{AB},\quad \lambda\geqq0\]
+  となる実数 \(\lambda\) が存在する点 \(X\) すべての集合を、点 \(A\) を\textbf{端点}\index{たんてん@端点}とし点 \(B\) を通る\textbf{半直線}\index{はんちょくせん@半直線}といい、
+  \[\text{半直線} AB\]
+   と表す。
+  （この表記法は点の順番によって端点を示すが、絶対的な決まりではない。）
+\end{dfn}
+
+\begin{dfn}[平面]\label{definition:9}
+  一直線上にない任意の三点 \(A,\ B,\ C\) に対して、
+  \[\overrightarrow{AX}=\lambda\overrightarrow{AB}+\mu\overrightarrow{AC}\]
+  となる実数 \(\lambda,\ \mu\) が存在する点 \(X\) すべての集合を、点 \(A,\ B,\ C\) が定める\textbf{平面}\index{へいめん@平面}という。ただし、公理 \ref{axiom:14} によって高々一つしかないので普通は単に平面という。
+\end{dfn}
+
+\begin{dfn}[半平面、へり]\label{definition:10}
+  一直線上にない任意の三点 \(A,\ B,\ C\) に対して、
+  \[\overrightarrow{AX}=\lambda\overrightarrow{AB}+\mu\overrightarrow{AC},\quad \mu\geqq0\]
+  となる実数 \(\lambda,\ \mu\) が存在する点 \(X\) すべての集合を、直線 \(AB\) を\textbf{へり}\index{へり@へり}とし点 \(C\) を含む\textbf{半平面}\index{はんへいめん@半平面}という。また、
+  \[\overrightarrow{AX}=\lambda\overrightarrow{AB}+\mu\overrightarrow{AC},\quad \mu\leqq0\]
+  となる実数 \(\lambda,\ \mu\) が存在する点 \(X\) すべての集合を、直線 \(AB\) をへりとし点 \(C\) を含まない半平面という。
+  なお、この両方をあえて区別せず、直線 \(AB\) をへりとする半平面とよぶことがある。
+\end{dfn}
+
+（注意点として、「点 \(C\) を含む半平面」の「含む」は述語ではなく単に名称の一部だということである。よって、\(C\) がへりの点である場合、実際に含まれる点にもかかわらず正しく指示機能を果たさない。）
+
+\begin{dfn}[零角]\label{definition:11}
+  任意の三点 \(O,\ A,\ B\) に対して、半直線 \(OA\) と半直線 \(OB\) とが一致するとき、半直線 \(OA\) および半直線 \(OB\) を\textbf{零角}\index{れいかく@零角}といい、
+  \[\text{零角} AOB\]
+  と表す。
+\end{dfn}
+
+\begin{dfn}[凸角]\label{definition:12}
+  任意の三点 \(O,\ A,\ B\) に対して、半直線 \(OA\) と半直線 \(OB\) とが一致もせず合わさって一つの直線もなさないとき、直線 \(OA\) をへりとし点 \(B\) を含む半平面と、直線 \(OB\) をへりとし点 \(A\) を含む半平面との共通部分を\textbf{凸角}\index{とつかく@凸角}といい、
+  \[\text{凸角} AOB\]
+  と表す。
+\end{dfn}
+
+\begin{dfn}[平角]\label{definition:13}
+  任意の三点 \(O,\ A,\ B\) に対して、半直線 \(OA\) と半直線 \(OB\) とが合わさって一つの直線をなすとき、直線 \(AB\) をへりとする半平面を\textbf{平角}\index{へいかく@平角}といい、
+  \[\text{平角} AOB\]
+  と表す。
+  ただし、この記法からだけでは、二つある半平面のどちらか分からない。
+  それゆえ、厳密さを保つためには、どちらの半平面か別に指定する必要がある。
+\end{dfn}
+
+\begin{dfn}[凹角]\label{definition:14}
+  任意の三点 \(O,\ A,\ B\) に対して、半直線 \(OA\) と半直線 \(OB\) とが一致もせず合わさって一つの直線もなさないとき、平面から凸角 \(AOB\) を取り去った残りの部分に半直線 \(OA\) と半直線 \(OB\) を合わせた全体を\textbf{凹角}\index{おうかく@凹角}といい、
+  \[\text{凹角} AOB\]
+  と表す。
+\end{dfn}
+
+\begin{dfn}[周角]\label{definition:15}
+  任意の三点 \(O,\ A,\ B\) に対して、半直線 \(OA\) と半直線 \(OB\) とが一致するとき、平面から零角 \(AOB\) を取り去った残りの部分に半直線 \(OA\) と半直線 \(OB\) を合わせた全体、すなわち平面全体を\textbf{周角}\index{しゅうかく@周角}といい、
+  \[\text{周角} AOB\]
+  と表す。
+\end{dfn}
+
+\begin{dfn}[角、辺]\label{definition:16}
+  零角、凸角、平角、凹角、周角をまとめて\textbf{角}\index{かく@角}という。
+  \(O,\ A,\ B\) を任意の三点とするとき、\(\text{角} AOB\) があるならば、それは
+  \[\angle AOB\]
+  と書かれ、半直線 \(OA\) と半直線 \(OB\) はそれぞれ \(\angle AOB\) の\textbf{辺}\index{へん@(角の)辺}とよばれる。
+  二つの辺が半直線 \(h,\ k\) である角を
+  \[\angle hk\]
+  と表す。
+\end{dfn}
+
+\begin{dfn}[ノルム]\label{definition:17}
+  任意のベクトル \(\vec{a}\) に対して、\textbf{ノルム}\index{のるむ@ノルム}(norm)とよばれる実数 \(\|\vec{a}\|\) を
+  \[\|\vec{a}\|=\sqrt{(\vec{a},\vec{a})}\]
+  と定義する。
+\end{dfn}
+
+\begin{dfn}[距離]\label{definition:18}
+  任意の二点 \(P,Q\) に対して、二点間の\textbf{距離}\index{きょり@(二点間の)距離} \(d(P,Q)\) を
+  \[d(P,Q)=\|\overrightarrow{PQ}\|\]
+  と定義する。
+\end{dfn}
+
+\section{ベクトルの公理群}
+
+\begin{axm}\label{axiom:1}
+  任意のベクトル \(\vec{a},\ \vec{b}\) に対して、ベクトルの\textbf{和}\index{わ@和}とよばれるベクトル
+  \[\vec{a}+\vec{b}\]
+  がただ一つ存在する。
+\end{axm}
+
+\begin{axm}\label{axiom:2}
+  \textbf{零ベクトル}\index{れいべくとる@零ベクトル}とよばれるベクトル
+  \[\vec{0}\]
+  がただ一つ存在する。
+\end{axm}
+
+\begin{axm}\label{axiom:3}
+  任意のベクトル \(\vec{a}\) に対して、その\textbf{逆向きのベクトル}\index{ぎゃくむきのべくとる@逆向きのベクトル}とよばれるベクトル
+  \[-\vec{a}\]
+  がただ一つ存在する。
+\end{axm}
+
+\begin{axm}\label{axiom:4}
+  任意のベクトル \(\vec{a},\ \vec{b},\ \vec{c}\) に対して、
+  \begin{enumerate}
+    \item \(\vec{a}+\vec{b}=\vec{b}+\vec{a}\)
+    \item \((\vec{a}+\vec{b})+\vec{c}=\vec{a}+(\vec{b}+\vec{c})\)
+    \item \(\vec{a}+\vec{0}=\vec{0}+\vec{a}=\vec{a}\)
+    \item \(\vec{a}+(-\vec{a})=(-\vec{a})+\vec{a}=\vec{0}\)
+  \end{enumerate}
+  が成り立つ。
+\end{axm}
+
+\begin{axm}\label{axiom:5}
+  任意のスカラー \(\lambda\) と任意のベクトル \(\vec{a}\) に対して、\(\lambda\) と \(\vec{a}\) の\textbf{積}\index{せき@(スカラーとベクトルの)積}とよばれるベクトル
+  \[\lambda\vec{a}\]
+  がただ一つ存在する。
+\end{axm}
+
+\begin{axm}\label{axiom:6}
+  任意のスカラー \(\lambda,\ \mu\) と任意のベクトル \(\vec{a},\ \vec{b}\) に対して、
+  \begin{enumerate}
+    \item \(\lambda(\vec{a}+\vec{b})=\lambda\vec{a}+\lambda\vec{b}\)
+    \item \((\lambda+\mu)\vec{a}=\lambda\vec{a}+\mu\vec{a}\)
+    \item \(\lambda(\mu\vec{a})=(\lambda\mu)\vec{a}\)
+    \item \(1\vec{a}=\vec{a}\)
+  \end{enumerate}
+  が成り立つ。
+\end{axm}
+
+\section{内積の公理群}
+
+\begin{axm}\label{axiom:7}
+  任意のベクトル \(\vec{a},\ \vec{b}\) に対して、\(\vec{a}\) と \(\vec{b}\) の\textbf{内積}\index{ないせき@内積}とよばれる実数
+  \[(\vec{a},\vec{b})\]
+  がただ一つ存在する。
+\end{axm}
+
+\begin{axm}\label{axiom:8}
+  任意のベクトル \(\vec{a},\ \vec{b},\ \vec{c}\) と任意のスカラー \(\lambda\) に対して、
+  \begin{enumerate}
+    \item \((\vec{a},\vec{b})=(\vec{b},\vec{a})\)
+    \item \((\vec{a}+\vec{b},\vec{c})=(\vec{a},\vec{c})+(\vec{b},\vec{c})\)
+    \item \((\lambda\vec{a},\vec{b})=\lambda(\vec{a},\vec{b})\)
+    \item \((\vec{a},\vec{a})\geqq0\)
+    \item \((\vec{a},\vec{a})=0\) ならば、かつそのときに限り \(\vec{a}=\vec{0}\)
+  \end{enumerate}
+  が成り立つ。
+\end{axm}
+
+\section{ユークリッド空間の公理群}
+
+\begin{axm}\label{axiom:9}
+  少なくとも一つの点が存在する。
+\end{axm}
+
+\begin{axm}\label{axiom:10}
+  任意の二点 \(P,\ Q\) に対して、ただ一つのベクトル
+  \[\overrightarrow{PQ}\]
+  が存在する。
+  \(P\) と \(Q\) は一致してもよい。
+\end{axm}
+
+\begin{axm}\label{axiom:11}
+  任意の点 \(P\) と任意のベクトル \(\vec{a}\) に対して、
+  \[\overrightarrow{PQ}=\vec{a}\]
+  を満たす点 \(Q\) がただ一つ存在する。
+\end{axm}
+
+\begin{axm}\label{axiom:12}
+  任意の三点 \(P,\ Q,\ R\) に対して、
+  \[\overrightarrow{PR}+\overrightarrow{RQ}=\overrightarrow{PQ}\]
+  が成り立つ。
+\end{axm}
+
+\section{次元の公理群}
+
+\begin{axm}\label{axiom:13}
+  少なくとも二つのベクトルが存在し、一方は他方のスカラー倍でない。
+\end{axm}
+
+\begin{axm}\label{axiom:14}
+  任意の三点 \(A,\ B,\ C\) が一直線上にないならば、どのような点 \(X\) に対しても、
+  \[\overrightarrow{AX}=\lambda\overrightarrow{AB}+\mu\overrightarrow{AC}\]
+  を満たす実数 \(\lambda,\ \mu\) がただ一組存在する。
+\end{axm}
+
+\section{角の大きさの公理群}
+
+\begin{axm}\label{axiom:15}
+  角の辺を \(h,\ k\) とするとき、角 \(\angle{hk}\) には、\textbf{角の大きさ}\index{かくのおおきさ@角の大きさ}とよばれるただ一つの実数
+  \[\overline{\angle{hk}}\]
+  が対応する。
+\end{axm}
+
+\begin{axm}\label{axiom:16}
+  角の辺を \(h,\ k\) とするとき、
+  \(\overline{\angle{hk}}=0\) ならば \(h=k\) である。
+\end{axm}
+
+\begin{axm}\label{axiom:17}
+  \(\angle{hk}\) と \(\angle{kl}\) が辺以外に共通部分を持たず、ともに \(\angle{hl}\) の部分集合であるならば、
+  \[\overline{\angle{hl}}=\overline{\angle{hk}}+\overline{\angle{kl}}\]
+  が成り立つ。
+\end{axm}
+
+\begin{axm}\label{axiom:18}
+  二つの任意の角、\(\angle{AOB}\) と \(\angle{A'O'B'}\) に対して、
+  \[d(O,A)=d(O',A'),\quad d(O,B)=d(O',B'),\quad d(A,B)=d(A',B')\]
+  ならば
+  \[\overline{\angle{AOB}}=\overline{\angle{A'O'B'}}\]
+  である。
+\end{axm}

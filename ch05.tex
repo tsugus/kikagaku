@@ -1,0 +1,151 @@
+\chapter{次元の公理から導かれる定理}
+
+\begin{thm}\label{theorem:21}
+  一直線上にない三点が存在する。
+\end{thm}
+
+\begin{proof}
+  公理 \ref{axiom:9}, \ref{axiom:13} に公理 \ref{axiom:11} を適用すれば明らか。
+\end{proof}
+
+\begin{thm}\label{theorem:22}
+  平面はただ一つ存在し、すべての点はその平面に含まれる。
+\end{thm}
+
+\begin{proof}
+  定理 \ref{theorem:21} と公理 \ref{axiom:14} による。
+\end{proof}
+
+\begin{dfn}[交わる、交点]\label{definition:22}
+  点の集合が点を共有するとき、それらは\textbf{交わる}\index{まじわる@交わる}といい、共有される点を\textbf{交点}\index{こうてん@交点}という。
+\end{dfn}
+
+\begin{thm}\label{theorem:23}
+  二直線は、点を共有しないか、一点のみで交わるか、全く一致するかのいずれかである。
+\end{thm}
+
+\begin{proof}
+  一つより多くの点を共有している場合は、定理 \ref{theorem:16} よりそれら二直線は一致する。
+\end{proof}
+
+\begin{dfn}[ベクトルの平行]\label{definition:23}
+  零ベクトルでない二つのベクトル \(\vec{a},\ \vec{b}\)は、一方が地方のスカラー倍であるとき、\textbf{平行}\index{へいこう@(ベクトルの)平行}であるといわれ、
+  \[\vec{a}/\!/\vec{b}\]
+  と書かれる。
+\end{dfn}
+
+\begin{thm}\label{theorem:24}
+  \(\vec{a}/\!/\vec{b}\) ならば \(\vec{b}/\!/\vec{a}.\)
+\end{thm}
+
+\begin{proof}
+  \(\vec{a}=\lambda\vec{b}\) と表されたとする。
+  \(\vec{a}\neq\vec{0}\) より、\(\lambda\neq0\) でなければならない。
+  ゆえに \(\displaystyle \vec{b}=\frac{1}{\lambda}\vec{a}.\)
+\end{proof}
+
+\begin{thm}\label{theorem:25}
+  \(\vec{a}/\!/\vec{b}\) ならば \(\vec{a}\perp\vec{b}\) でない。
+\end{thm}
+
+\begin{proof}
+  \(\vec{a}=\lambda\vec{b}\neq\vec{0}\) と表されたとする。
+  \[(\vec{a},\vec{b})=(\vec{a},\lambda\vec{a})=\lambda(\vec{a},\vec{a})\neq0.\]
+\end{proof}
+
+\begin{thm}\label{theorem:26}
+ \(\vec{a},\ \vec{b}\) が零ベクトルでなく、互いに平行でもないとき、\(\lambda\vec{a}+\mu\vec{b}=\vec{0}\) ならば \(\lambda=\mu=0.\)
+\end{thm}
+
+\begin{proof}
+  \(\overrightarrow{OA}=\vec{a},\) \(\overrightarrow{OB}=\vec{b}\) となるように点をとると、\(\vec{a},\ \vec{b}\) は零ベクトルでなく、互いに平行でもないのだから、\(O,\ A,\ B\) は異なる三点である。
+
+  それゆえ公理 \ref{axiom:14} により、\(\lambda\vec{a}+\mu\vec{b}=\vec{0}\) となるのは \(\lambda=\mu=0\) の場合のみ。
+\end{proof}
+
+\begin{dfn}[直線の垂直]\label{definition:24}
+  互いに垂直な二つのベクトルをもとに定義しうる二つの直線 \(l,\ m\) は、\textbf{垂直}\index{すいちょく@(直線の)垂直}であるといわれ、
+  \[l\perp m\]
+  と書かれる。
+\end{dfn}
+
+\begin{dfn}[直線の平行]\label{definition:25}
+  互いに平行な二つのベクトルをもとに定義しうる二つの直線 \(l,\ m\) は、\textbf{平行}\index{へいこう@(直線の)平行}であるといわれ、
+  \[l/\!/m\]
+  と書かれる。
+\end{dfn}
+
+\begin{thm}\label{theorem:27}
+  与えられた直線上の与えられた点を通ってその直線に垂直な直線は、ただ一つ存在する。
+\end{thm}
+
+\begin{proof}
+  まず、与えられた直線 \(l\) を定めるベクトル \(\vec{a}\) に対し、それと垂直かつ零ベクトルでないベクトルが存在することを示す。
+  
+  定理 \ref{theorem:14} より、任意のベクトル \(\vec{b}\) に対し、その \(\vec{a}\ (\neq\vec{0})\) に対する正射影のスカラーを \(\lambda\) とすると、
+  \[\vec{a}\perp(\vec{b}-\lambda\vec{a}).\]
+
+  さて、\(\vec{b}-\lambda\vec{a}=\vec{0}\) ならば、\(\vec{b}\) は \(\vec{a}\) のスカラー倍である。ゆえに、\(\vec{a}\) のスカラー倍にならないベクトルを \(\vec{b}\) として選べば、\(\vec{b}-\lambda\vec{a}\neq\vec{0}\) である。そして、そのように選ぶことは公理 \ref{axiom:13} により可能である。
+
+  それゆえ、与えられた直線上の点から \(\vec{b}-\lambda\vec{a}\) を用いて新たな点をとれば、垂直な直線が得られる。次は、それがただ一つしかないことを示す。
+
+  点 \(P\) が直線 \(l\) 上にあるとき、\(l\) をへりとする同一の半平面上に二点 \(A,\ B\) があって、それらは \(l\) 上になく、直線 \(PA,\ PB\) は \(l\) に垂直だとする。
+  さらに、点 \(Q\) を新たにとって、\(l\) の部分である半直線 \(PQ\) を考える。
+  すると、\(A,\ P,\ Q\) は一直線上にないから公理 \ref{axiom:14} を用いて、
+  \begin{align*}
+    0 &= (\overrightarrow{PQ},\overrightarrow{PB})=(\overrightarrow{PQ},\lambda\overrightarrow{PQ}+\mu\overrightarrow{PA}) \\
+      &= \lambda(\overrightarrow{PQ},\overrightarrow{PQ})+\mu(\overrightarrow{PQ},\overrightarrow{PA}) \\
+      &= \lambda\|\overrightarrow{PQ}\|^2+\mu(\overrightarrow{PQ},\overrightarrow{PA})=\lambda\|\overrightarrow{PQ}\|^2
+  \end{align*}
+  ここで、\(P\neq Q\) より \(\|\overrightarrow{PQ}\|\neq0.\)
+  ゆえに \(\lambda=0.\)
+  よって
+  \[\overrightarrow{PB}=\lambda\overrightarrow{PQ}+\mu\overrightarrow{PA}=\mu\overrightarrow{PA}.\]
+  すなわち、直線 \(PB\) は直線 \(PA\) と重なる。
+\end{proof}
+
+\begin{thm}\label{theorem:28}
+  異なる二つの直線が交わるならば、それらは平行でない。
+\end{thm}
+
+\begin{proof}
+  直線 \(AB,\ CD\) があるとする。
+  これらが半直線 \(AB,\ CD\) の端点以外の部分で交わるとしても一般性は失われない。
+  その交点を \(O\) とする。
+
+  さて、直線 \(AB\) と直線 \(CD\) がもし平行だとすると、直線 \(CD\) も点 \(C\) を基点にしさえすればベクトル \(\overrightarrow{AB}\) を用いて再定義できるから、
+  \[\overrightarrow{AO}=\lambda_1\overrightarrow{AB},\quad \overrightarrow{CO}=\lambda_2\overrightarrow{AB}.\]
+  ゆえに
+  \[\overrightarrow{AC}=\overrightarrow{OC}-\overrightarrow{OA}=(\lambda_1-\lambda_2)\overrightarrow{AB}.\]
+  ところがこれは、\(\lambda_1=\lambda_2\) で \(A\) と \(C\) は一致するか、さもなければ \(C\) が直線 \(AB\) 上にあることになる。
+  しかし、いずれも異なる二直線という前提に反する。
+
+  ゆえに、平行ではない。
+\end{proof}
+
+\begin{thm}\label{theorem:29}
+  異なる二つの直線が平行でないならば、それらは交わる。
+\end{thm}
+
+\begin{proof}
+  二直線 \(AB,\ CD\) が平行でないとし、\(\overrightarrow{AE}=\overrightarrow{CD}\) となる点 \(E\) をとる。
+  このとき、公理 \ref{axiom:14} より \(\overrightarrow{AE}=\lambda\overrightarrow{AB}+\mu\overrightarrow{AC}\) となる \(\lambda,\ \mu\) がある。
+
+  さて、ここで \(\mu=0\) とすると、直線 \(AE\) は直線 \(AB\) と平行であることになり、直線 \(CD\) も 直線 \(AB\) と平行になってしまうので、\(\mu\neq0.\)
+
+  ゆえに、\(\displaystyle \overrightarrow{AF}=-\frac{\lambda}{\mu}\overrightarrow{AB}\) とおくことができ、
+  \begin{align*}
+    \overrightarrow{CF} &= \overrightarrow{AF}-\overrightarrow{AC}=-\frac{\lambda}{\mu}\overrightarrow{AB}-\overrightarrow{AC} \\
+                        &= -\frac{1}{\mu}(\lambda\overrightarrow{AB}+\mu\overrightarrow{AC}) \\
+                        &= -\frac{1}{\mu}\overrightarrow{AE}=-\frac{1}{\mu}\overrightarrow{CD}.
+  \end{align*}
+  これは、直線 \(AB\) 上の点として定義した点 \(F\) が直線 \(CD\) 上にもあることを示している。
+\end{proof}
+
+\begin{thm}\label{theorem:30}
+  与えられた直線外の点を通ってその直線に平行な直線は、ただ一つ存在する。
+\end{thm}
+
+\begin{proof}
+  直線および平行の定義から明らか。
+\end{proof}

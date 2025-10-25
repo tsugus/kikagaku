@@ -1,0 +1,169 @@
+\chapter{内積に関する定理}
+
+\begin{thm}\label{theorem:6}
+  \((\vec{a},\vec{b}+\vec{c})=(\vec{a},\vec{b})+(\vec{a},\vec{c})\)
+\end{thm}
+
+\begin{proof}
+  \begin{align*}
+    (\vec{a},\vec{b}+\vec{c}) &= (\vec{b}+\vec{c},\vec{a}) \\
+                              &= (\vec{b}.\vec{a})+(\vec{c},\vec{a}) \\
+                              &= (\vec{a},\vec{b})+(\vec{a},\vec{c}). \\
+  \end{align*}
+\end{proof}
+
+\begin{thm}\label{theorem:7}
+  \((\vec{a},\lambda\vec{b})=\lambda(\vec{a},\vec{b}).\)
+\end{thm}
+
+\begin{proof}
+  \[(\vec{a},\lambda\vec{b})=(\lambda\vec{b},\vec{a})=\lambda(\vec{b},\vec{a})=\lambda(\vec{a},\vec{b}).\]
+\end{proof}
+
+\begin{thm}\label{theorem:8}
+  \((\vec{0},\vec{a})=\vec{0}.\)
+\end{thm}
+
+\begin{proof}
+  \[(\vec{0},\vec{a})+(\vec{0},\vec{a})=(\vec{0}+\vec{0},\vec{a})=(\vec{0},\vec{a}).\]
+  ゆえに
+  \[(\vec{0},\vec{a})=(\vec{0},\vec{a})-(\vec{0},\vec{a})=0.\]
+\end{proof}
+
+\begin{col*}
+  \((\vec{a},\vec{0})=\vec{0}.\)
+\end{col*}
+
+\begin{thm}[シュワルツ(Schwarz)の不等式]\label{theorem:9}
+  \(|(\vec{a},\vec{b})|\leqq\|\vec{a}\|\|\vec{b}\|.\)
+\end{thm}
+
+\begin{proof}
+  \(\vec{a}=0\) ならば、定理 \ref{theorem:8} より明らかに成り立つ。
+
+  ゆえに \(\vec{a}\neq0\) とする。公理 \ref{axiom:8} より、任意の実数 \(\lambda\) に対して
+  \[(\lambda\vec{a}+\vec{b},\lambda\vec{a}+\vec{b})\geqq0.\]
+  公理 \ref{axiom:8} を用いて左辺を展開すると、
+  \[(\vec{a},\vec{a})\lambda^2+2(\vec{a},\vec{b})\lambda+(\vec{b},\vec{b})\geqq0.\]
+  公理 \ref{axiom:8} より \((\vec{a},\vec{a})>0\) であるから、左辺を平方完成すると
+  \[(\vec{a},\vec{a})\left(\lambda+\frac{(\vec{a},\vec{b})}{(\vec{a},\vec{a})}\right)^2-\frac{(\vec{a},\vec{b})^2-(\vec{a},\vec{a})(\vec{b},\vec{b})}{(\vec{a},\vec{a})}\geqq0.\]
+  ゆえに、左辺は \(\displaystyle\lambda=-\frac{(\vec{a},\vec{b})}{(\vec{a},\vec{a})}\) のとき最小値をとり、それが \(\geqq0\) でなければならない。よって
+  \[(\vec{a},\vec{b})^2\leqq(\vec{a},\vec{a})(\vec{b},\vec{b}).\]
+  ゆえに
+  \[|(\vec{a},\vec{b})|\leqq\|\vec{a}\|\|\vec{b}\|.\]
+\end{proof}
+
+\begin{thm}\label{theorem:10}
+  以下のことが成り立つ。
+  \begin{enumerate}
+    \item \(\|\vec{a}\|\geqq0\)
+    \item \(\|\vec{a}\|=0\) ならば、かつそのときに限り \(\vec{a}=\vec{0}\)
+    \item \(\|\vec{a}+\vec{b}\|\leqq\|\vec{a}\|+\|\vec{b}\|\)
+    \item \(\|\lambda\vec{a}\|=|\lambda|\|\vec{a}\|.\)
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  \begin{enumerate}
+    \item ノルムの定義より明らか。
+    \item \(\sqrt{x}=0\) ならば、かつそのときに限り \(x=0.\)
+    ゆえに、\(x=(\vec{a},\vec{a})\) とおけば、ノルムの定義と公理 \ref{axiom:8} より明らか。
+    \item
+      \begin{align*}
+        &(\|\vec{a}\|+\|\vec{b}\|)^2-\|\vec{a}+\vec{b}\|^2 \\
+        &= (\|\vec{a}\|+\|\vec{b}\|)^2-(\vec{a}+\vec{b},\vec{a}+\vec{b}) \\
+        &= \|\vec{a}\|^2+2\|\vec{a}\|\|\vec{b}\|+\|\vec{b}\|^2-((\vec{a},\vec{a})+2(\vec{a},\vec{b})+(\vec{b},\vec{b})) \\
+        &= 2(\|\vec{a}\|\|\vec{b}\|-(\vec{a},\vec{b}))\geqq2(\|\vec{a}\|\|\vec{b}\|-|(\vec{a},\vec{b})|)\geqq0.
+      \end{align*}
+      最後の不等号は定理 \ref{theorem:9} による。
+    \item
+      \begin{align*}
+        \|\lambda\vec{a}\| &= \sqrt{(\lambda\vec{a},\lambda\vec{a})}=\sqrt{\lambda^2(\vec{a},\vec{a})} \\
+                           &= |\lambda|\sqrt{(\vec{a},\vec{a})}|=|\lambda|\|\vec{a}\|.
+      \end{align*}
+  \end{enumerate}
+\end{proof}
+
+\begin{dfn}[ベクトルの垂直]\label{definition:20}
+  \((\vec{a},\vec{b})=0\) であることを、\(\vec{a}\) と \(\vec{b}\) は\textbf{垂直}\index{すいちょく@(ベクトルの)垂直}であるといい、
+  \[\vec{a}\perp\vec{b}\]
+  と表す。
+\end{dfn}
+
+\begin{thm}\label{theorem:11}
+  \(\vec{a}\perp\vec{b}\) ならば \(\vec{b}\perp\vec{a}.\)
+\end{thm}
+
+\begin{proof}
+  垂直の定義より明らか。
+\end{proof}
+
+\begin{thm}\label{theorem:12}
+  \(\vec{a}\perp\vec{0}.\)
+\end{thm}
+
+\begin{proof}
+  定理 \ref{theorem:8} の系より明らか。
+\end{proof}
+
+\begin{thm}\label{theorem:13}
+  \(\vec{a}\perp\vec{b}\) ならば、かつそのときに限り \(\|\vec{a}+\vec{b}\|^2=\|\vec{a}\|^2+\|\vec{b}\|^2.\)
+\end{thm}
+
+\begin{proof}
+  まず、
+  \begin{align*}
+    \|\vec{a}+\vec{b}\|^2 &= (\vec{a}+\vec{b},\vec{a}+\vec{b}) \\
+                          &= (\vec{a},\vec{a})+2(\vec{a},\vec{b})+(\vec{b},\vec{b}) \\
+                          &= \|\vec{a}\|^2+2(\vec{a},\vec{b})+\|\vec{b}\|^2.
+  \end{align*}
+  これを踏まえれば以下のようになる。
+
+  \(\vec{a}\perp\vec{b}\) とする。
+  すなわち \((\vec{a},\vec{b})=0.\)
+  ゆえに \(\|\vec{a}+\vec{b}\|^2=\|\vec{a}\|^2+\|\vec{b}\|^2.
+  \) この推論が逆向きにも成り立つことは明らか。
+\end{proof}
+
+\begin{thm}\label{theorem:14}
+  \(\vec{a}\neq\vec{0}\) であるとき、どのようなベクトル \(\vec{b}\) に対しても
+  \[\vec{a}\perp\left(\vec{b}-\frac{(\vec{a},\vec{b})}{\|\vec{a}\|^2}\vec{a}\right)\]
+  が成り立つ。
+\end{thm}
+
+\begin{proof}
+  \begin{align*}
+    \left(\vec{a},\vec{b}-\frac{(\vec{a},\vec{b})}{\|\vec{a}\|^2}\vec{a}\right) &= (\vec{a},\vec{b})-\left(\vec{a},\frac{(\vec{a},\vec{b})}{\|\vec{a}\|^2}\vec{a}\right) \\
+                              &= (\vec{a},\vec{b})-\frac{(\vec{a},\vec{b})}{\|\vec{a}\|^2}(\vec{a},\vec{a}) \\
+                              &= (\vec{a},\vec{b})-\frac{(\vec{a},\vec{b})}{\|\vec{a}\|^2}\|\vec{a}\|^2=0.
+  \end{align*}
+\end{proof}
+
+\begin{col*}
+  零ベクトルでない任意のベクトル \(\vec{a}\)が与えられているとき、任意のベクトル \(\vec{b}\) は、\(\vec{a}\) のスカラー倍と \(\vec{a}\) に垂直なベクトルとの和として表される。
+\end{col*}
+
+\begin{thm}\label{theorem:15}
+  \(\vec{a}\neq\vec{0}\) であるとき、
+  \[\vec{a}\perp(\vec{b}-\lambda\vec{a})\]
+  ならば
+  \[\lambda=\frac{(\vec{a},\vec{b})}{\|\vec{a}\|^2}\]
+  である。
+\end{thm}
+
+\begin{proof}
+  \begin{align*}
+    0 &= (\vec{a},\vec{b}-\lambda\vec{a})=(\vec{a},\vec{b})+(\vec{a},(-\lambda)\vec{a})=(\vec{a},\vec{b})-\lambda(\vec{a},\vec{a}) \\
+      &= (\vec{a},\vec{b})-\lambda\|\vec{a}\|^2.
+  \end{align*}
+\end{proof}
+
+\begin{col*}
+  定理 \ref{theorem:14} の系における、その表され方はただ一つである。
+\end{col*}
+
+\begin{dfn}\label{definition:21}
+  \(\vec{a}\neq\vec{0}\) のとき、
+  \[\frac{(\vec{a},\vec{b})}{\|\vec{a}\|^2}\vec{a}\]
+  を \(\vec{b}\) の \(\vec{a}\) の上への\textbf{正射影}\index{せいしゃえい@正射影}という。
+\end{dfn}
