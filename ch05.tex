@@ -1,0 +1,126 @@
+\chapter{二次元ユークリッド空間で成り立つ定理}
+
+（私たちの公理系では、次元の公理群が次元は二であることを示している。）
+
+\begin{thm}\label{251101143301}
+  一直線上にない三点が存在する。
+\end{thm}
+
+\begin{proof}
+  公理 \ref{251101143101}, \ref{251101142901} に公理 \ref{251101143201} を適用すれば明らか。
+\end{proof}
+
+\begin{thm}
+  平面はただ一つ存在し、すべての点はその平面に含まれる。
+\end{thm}
+
+\begin{proof}
+  定理 \ref{251101143301} と公理 \ref{251101133903} による。
+\end{proof}
+
+\begin{thm}\label{251101143401}
+ \(\vec{a},\ \vec{b}\) が零ベクトルでなく、互いに平行でもないとき、\(\lambda\vec{a}+\mu\vec{b}=\vec{0}\) ならば \(\lambda=\mu=0.\)
+\end{thm}
+
+\begin{proof}
+  \(\overrightarrow{OA}=\vec{a},\) \(\overrightarrow{OB}=\vec{b}\) となるように点をとると、\(\vec{a},\ \vec{b}\) は零ベクトルでなく、互いに平行でもないのだから、\(O,\ A,\ B\) は一直線上にない三点である。
+
+  それゆえ公理 \ref{251101133903} により、\(\lambda\vec{a}+\mu\vec{b}=\vec{0}\) となるのは \(\lambda=\mu=0\) の場合のみ。
+\end{proof}
+
+\begin{thm}
+  直線上の一点を通ってその直線に垂直な直線は、ただ一つ存在する。
+\end{thm}
+
+\begin{proof}
+  まず、与えられた直線 \(l\) を定めるベクトル \(\vec{a}\) に対し、それと垂直かつ零ベクトルでないベクトルが存在することを示す。
+
+  定理 \ref{251101141501} より、任意のベクトル \(\vec{b}\) に対し、その \(\vec{a}\ (\neq\vec{0})\) に対する正射影のスカラーを \(\lambda\) とすると、
+  \[\vec{a}\perp(\vec{b}-\lambda\vec{a}).\]
+
+  さて、\(\vec{b}-\lambda\vec{a}=\vec{0}\) ならば、\(\vec{b}\) は \(\vec{a}\) のスカラー倍である。ゆえに、\(\vec{a}\) のスカラー倍にならないベクトルを \(\vec{b}\) として選べば、\(\vec{b}-\lambda\vec{a}\neq\vec{0}\) である。そして、そのように選ぶことは公理 \ref{251101142901} により可能である。
+
+  それゆえ、与えられた点から \(\vec{b}-\lambda\vec{a}\) を用いて新たな点をとれば、\(l\) 上の一点を通って \(l\) に垂直な直線が得られる。次は、それがただ一つしかないことを示す。
+
+  点 \(P\) が直線 \(l\) 上にあるとき、\(l\) をへりとする同一の半平面上に二点 \(A,\ B\) があって、それらは \(l\) 上になく、直線 \(PA,\ PB\) は \(l\) に垂直だとする。
+  さらに、点 \(Q\) を新たにとって、\(l\) の部分である半直線 \(PQ\) を考える。
+  すると、\(A,\ P,\ Q\) は一直線上にないから、公理 \ref{251101133903} を用いて
+  \begin{align*}
+    0 &= (\overrightarrow{PQ},\overrightarrow{PB})=(\overrightarrow{PQ},\lambda\overrightarrow{PQ}+\mu\overrightarrow{PA}) \\
+      &= \lambda(\overrightarrow{PQ},\overrightarrow{PQ})+\mu(\overrightarrow{PQ},\overrightarrow{PA}) \\
+      &= \lambda\|\overrightarrow{PQ}\|^2+\mu(\overrightarrow{PQ},\overrightarrow{PA})=\lambda\|\overrightarrow{PQ}\|^2.
+  \end{align*}
+  ここで、\(P\neq Q\) より \(\|\overrightarrow{PQ}\|\neq0.\)
+  ゆえに \(\lambda=0.\)
+  よって
+  \[\overrightarrow{PB}=\lambda\overrightarrow{PQ}+\mu\overrightarrow{PA}=\mu\overrightarrow{PA}.\]
+  すなわち、直線 \(PB\) は直線 \(PA\) と重なる。
+\end{proof}
+
+\begin{thm}
+  異なる二つの直線が平行でないならば、それらは交わる。
+\end{thm}
+
+\begin{proof}
+  二直線 \(AB,\ CD\) が平行でないとし、\(\overrightarrow{AE}=\overrightarrow{CD}\) となる点 \(E\) をとる。
+  このとき、公理 \ref{251101133903} より \(\overrightarrow{AE}=\lambda\overrightarrow{AB}+\mu\overrightarrow{AC}\) となる \(\lambda,\ \mu\) がある。
+
+  さて、ここで \(\mu=0\) とすると、\(\overrightarrow{CD}=\overrightarrow{AE}=\lambda\overrightarrow{AB}\) より、直線 \(CD\) が直線 \(AB\) と平行になってしまうので、\(\mu\neq0.\)
+
+  ゆえに、\(\displaystyle \overrightarrow{AF}=-\frac{\lambda}{\mu}\overrightarrow{AB}\) とおくことができ、
+  \begin{align*}
+    \overrightarrow{CF} &= \overrightarrow{AF}-\overrightarrow{AC}=-\frac{\lambda}{\mu}\overrightarrow{AB}-\overrightarrow{AC} \\
+                        &= -\frac{1}{\mu}(\lambda\overrightarrow{AB}+\mu\overrightarrow{AC}) \\
+                        &= -\frac{1}{\mu}\overrightarrow{AE}=-\frac{1}{\mu}\overrightarrow{CD}.
+  \end{align*}
+  これは、直線 \(AB\) 上の点として定義した点 \(F\) が直線 \(CD\) 上にもあることを示している。
+\end{proof}
+
+\begin{dfn}[ベクトルのなす角]
+  零ベクトルでない二つのベクトルに対して、それらと与えられた任意の点 \(O\) によって直接定義される二つの半直線を辺とする零角、凸角または平角を、点 \(O\) に関する\textbf{ベクトルのなす角}\index{べくとるのなすかく@ベクトルのなす角}という。
+  点を具体的に指定しなくても差しつかえない場合、点 \(O\) は省略される。
+\end{dfn}
+
+\begin{thm}\label{251101144602}
+ \(\vec{a},\ \vec{b}\) が零ベクトルでなく、互いに平行でもないとき、ある実数 \(\lambda,\ \mu\) について
+ \[\vec{c}=\lambda\vec{a}+\mu\vec{b},\quad \lambda,\ \mu>0\]
+ と表されるベクトル \(\vec{c}\) と任意の点 \(O\) から作られる半直線は、\(O\) に関する \(\vec{a}\) と \(\vec{b}\) のなす角を二分する。
+\end{thm}
+
+\begin{proof}
+  定理 \ref{251101143401} より \(\vec{c}\neq\vec{0}.\)
+
+  ここで \(\overrightarrow{OA}=\vec{a},\) \(\overrightarrow{OB}=\vec{b},\) \(\overrightarrow{OC}=\vec{c}\) とおくと、
+  \begin{equation}\label{251101143601}
+    \overrightarrow{OC}=\lambda_0\overrightarrow{OA}+\mu_0\overrightarrow{OB},\quad \lambda_0,\ \mu_0>0.
+  \end{equation}
+
+  さて、凸角 \(AOC\) の任意の点を \(X\) とすれば、
+  \begin{equation}\label{251101143602}
+    \overrightarrow{OX}=\lambda\overrightarrow{OA}+\mu\overrightarrow{OC},\quad \lambda,\ \mu\geqq0.
+  \end{equation}
+  式 \eqref{251101143601}, \eqref{251101143602} より
+  \[\overrightarrow{OX}=(\lambda+\lambda_0\mu)\overrightarrow{OA}+\mu_0\mu\overrightarrow{OB},\quad \lambda+\lambda_0\mu,\ \mu_0\mu\geqq0.\]
+  ゆえに、凸角 \(AOC\) は凸角 \(AOB\) の部分である。
+
+  同様に、凸角 \(BOC\) も凸角 \(AOB\) の部分である。
+
+  逆に、凸角 \(AOB\) の任意の点を \(X\) とすると、
+  \[\overrightarrow{OX}=\lambda\overrightarrow{OA}+\mu\overrightarrow{OB},\quad \lambda,\ \mu\geqq0.\]
+  式 \eqref{251101143601} より
+  \begin{equation}\label{251101143803}
+    \overrightarrow{OX}=\frac{1}{\mu_0}\mu\overrightarrow{OC}+(\lambda-\frac{\lambda_0}{\mu_0}\mu)\overrightarrow{OA}.
+  \end{equation}
+  同様に、
+  \begin{equation}\label{251101143804}
+    \overrightarrow{OX}=\frac{1}{\lambda_0}\lambda\overrightarrow{OC}+(\mu-\frac{\mu_0}{\lambda_0}\lambda)\overrightarrow{OB}.
+  \end{equation}
+  式 \eqref{251101143803}, \eqref{251101143804} において、\(\displaystyle \lambda-\frac{\lambda_0}{\mu_0}\mu\) と \(\displaystyle \mu-\frac{\mu_0}{\lambda_0}\lambda\) は必ずどちらかが負でない。
+  なおかつ、ともに負でないのは、\(\mu_0\lambda=\lambda_0\mu\) のとき、すなわち \(X\) が半直線 \(OC\) 上にあるときだけだと分かる。
+
+  つまり、先ほどの結果を踏まえると、凸角 \(AOC\) と凸角 \(BOC\) を合わせたものは凸角 \(AOB\) と一致し、点の重複は辺 \(OC\) 以外にない。
+
+  そして、式 \eqref{251101143601} より、半直線 \(OC\) は半直線 \(OA\) とも半直線 \(OB\) とも一致しないのは明らかであろう。
+
+  すなわち、半直線 \(OC\) は \(\angle AOB\) を二分する。
+\end{proof}

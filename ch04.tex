@@ -1,0 +1,253 @@
+\chapter{ユークリッド空間で成り立つ定理}
+
+\begin{thm}\label{251101142501}
+  直線に含まれる異なるどの二点に対しても、それら二点を通る直線はもとのものと一致する。
+\end{thm}
+
+\begin{proof}
+  異なる二点 \(P,\ Q\) について、
+  \[\overrightarrow{AP}=\alpha\overrightarrow{AB},\quad \overrightarrow{AQ}=\beta\overrightarrow{AB} \quad (\alpha\neq\beta)\]
+  とおける。
+
+  さて、
+  \[\overrightarrow{PX}=\lambda\overrightarrow{PQ}\]
+  を満たす X について
+  \[\overrightarrow{AX}-\overrightarrow{AP}=\lambda\overrightarrow{AQ}-\lambda\overrightarrow{AP}.\]
+  ゆえに
+  \begin{align*}
+    \overrightarrow{AX} &= \lambda\overrightarrow{AQ}+(1-\lambda)\overrightarrow{AP} \\
+                        &= \{(\beta-\alpha)\lambda+\alpha\}\overrightarrow{AB}.
+  \end{align*}
+
+  ここで、\(\beta-\alpha\neq0\) であるから、
+  \[(\beta-\alpha)\lambda+\alpha\]
+  は \(\lambda\) を変数とする一次式で、すべての実数値をとる。
+  ゆえに、実数を渡る新たな変数 \(\lambda'\) を用いて、
+  \[\overrightarrow{AX}=\lambda'\overrightarrow{AB}\]
+  と書き改めることができ、これはもとの直線を表す式と本質的に変わらない。
+\end{proof}
+
+\begin{thm}\label{251101142302}
+  半直線の端点と異なるどの点に対しても、端点とその点とで決まる半直線はもとのものと一致する。
+\end{thm}
+
+\begin{proof}
+  端点と異なる点 \(P\) について、
+  \[\overrightarrow{AP}=\alpha\overrightarrow{AB} \quad (\alpha>0)\]
+  とおける。
+
+  さて、
+  \[\overrightarrow{AX}=\lambda\overrightarrow{AP},\quad \lambda\geqq0\]
+  を満たす X について
+  \[\overrightarrow{AX}=\alpha\lambda\overrightarrow{AB}.\]
+
+  ここで
+  \[\alpha\lambda\]
+  は、負でないすべての実数を渡る。
+  ゆえに
+  \[\overrightarrow{AX}=\lambda'\overrightarrow{AB},\quad \lambda'\geqq0\]
+  とおくことができ、これはもとの半直線を表す式と本質的に同じである。
+\end{proof}
+
+\begin{thm}\label{251101142201}
+  へりにないある点を含む半平面に含まれるが、そのへりにはないどの点に対しても、同一の直線をへりとしその点を含む半平面はもとのものと一致する。
+\end{thm}
+
+\begin{proof}
+  直線 \(AB\) をへりとし点 \(C\) を含む半平面におけるそのような点 \(P\) は、
+  \[\overrightarrow{AP}=\alpha\overrightarrow{AB}+\beta\overrightarrow{AC},\quad \beta>0\]
+  と表される。
+
+  ゆえに、新しい半平面は \(\mu\geqq0\) として、ある \(\lambda,\ \mu\) について
+  \begin{align*}
+    \overrightarrow{AX} &= \lambda\overrightarrow{AB}+\mu\overrightarrow{AP} \\
+                        &= \lambda\overrightarrow{AB}+\alpha\mu\overrightarrow{AB}+\beta\mu\overrightarrow{AC} \\
+                        &= (\lambda+\alpha\mu)\overrightarrow{AB}+\beta\mu\overrightarrow{AC}
+  \end{align*}
+  となる点 \(X\) の集合として定義される。
+
+  ここで、\(\lambda\) と \(\mu\) は独立だから、\(\mu\) が動かない場合のみを考えても、\(\lambda+\alpha\mu\) はすべての実数を渡る。
+  \(\beta\mu\) が非負の実数すべてを渡るのは明らか。
+  よって、
+  \[\overrightarrow{AX}=\lambda'\overrightarrow{AB}+\mu'\overrightarrow{AC},\quad \mu'\geqq0\]
+  とおくことができるが、これはもとの半平面を表す式と実質同じである。
+\end{proof}
+
+\begin{thm}
+  ある点を含まない半平面に含まれないどの点に対しても、同一の直線をへりとしその点を含まない半平面はもとのものと一致する。
+\end{thm}
+
+\begin{proof}
+  定理 \ref{251101142201} の証明における \(\mu\) と \(\mu'\) の正負が反転するだけである。
+\end{proof}
+
+\begin{thm}
+  異なる三点 \(O,\ A,\ B\) が一直線上にあるとき、半直線 \(OA\) と半直線 \(OB\) は一致するか、合わせると直線 \(AB\) になるかのどちらかである。
+\end{thm}
+
+\begin{proof}
+  点 \(B\) は半直線 \(OA\) 上にあるかないかのどちらかである。
+
+  前者ならば、定理 \ref{251101142302} により半直線 \(OA,\ OB\) は一致する。
+
+  後者ならば、\(O,\ A,\ B\) が一直線上にあることより
+  \[\overrightarrow{OB}=\alpha\overrightarrow{OA},\quad \alpha<0\]
+  である。
+  すると半直線 \(OB\) は、\(\lambda\geqq0,\) \(\lambda'\leqq0\) として
+  \[\overrightarrow{OX}=\lambda\overrightarrow{OB}=\alpha\lambda\overrightarrow{OA}=\lambda'\overrightarrow{OA}\]
+  を満たす \(X\) の集合ということになるので、これが半直線 \(OA\) と合わされば一つの直線と等しくなるのは明らかである。
+  その直線は定理 \ref{251101142501} より直線 \(AB\) である。
+\end{proof}
+
+\begin{dfn}[交わる、交点]
+  点の集合が点を共有するとき、それらは\textbf{交わる}\index{まじわる@交わる}といい、共有される点を\textbf{交点}\index{こうてん@交点}という。
+\end{dfn}
+
+\begin{thm}
+  二直線は、点を共有しないか、一点のみで交わるか、全く一致するかのいずれかである。
+\end{thm}
+
+\begin{proof}
+  一つより多くの点を共有している場合は、定理 \ref{251101142501} よりそれら二直線は一致する。
+\end{proof}
+
+\begin{dfn}[直線の垂直]
+  それぞれを定義するベクトルが互いに垂直である二つの直線 \(l,\ m\) は、\textbf{垂直}\index{すいちょく@(直線の)垂直}であるといわれ、それを
+  \[l\perp m\]
+  と書く。
+\end{dfn}
+
+\begin{dfn}[直線の平行]
+  それぞれを定義するベクトルが互いに平行である二つの直線 \(l,\ m\) は、\textbf{平行}\index{へいこう@(直線の)平行}であるといわれ、それを
+  \[l/\!/m\]
+  と書く。\footnote{私たちの公理系では、直線の一致も平行に含まれる。}
+\end{dfn}
+
+\begin{thm}
+  一点を通って一つの直線に平行な直線は、ただ一つ存在する。
+\end{thm}
+
+\begin{proof}
+  直線 \(l\) を定義しうる任意のベクトルを \(\vec{a}\) としよう。
+  すると、点 \(P\) を通って \(l\) に平行な直線の一つ \(l_1\) は、
+  \begin{equation}\label{251101142701}
+    \overrightarrow{PX}=\lambda\vec{a}
+  \end{equation}
+  となる実数 \(\lambda\) が存在する点 \(X\) の集合として表される。
+  ところが、このとき \(\vec{b}=\lambda_0\vec{a}\ (\vec{b}\neq\vec{0})\) であれば
+  \begin{equation}\label{251101142702}
+    \overrightarrow{PX}=\frac{\lambda}{\lambda_0}\vec{b}
+  \end{equation}
+  が成り立ち、逆に
+  式 \eqref{251101142702} から式 \eqref{251101142701} が導かれるので、\(\overrightarrow{PX}=\mu\vec{b}\) で定義される直線 \(l_2\) は \(l_1\) と一致する。
+
+  すなわち、\(\vec{a}\) に平行なベクトルで定義される直線は、\(P\) を通る限りすべて同一になる。
+\end{proof}
+
+\begin{thm}
+  異なる二つの直線が交わるならば、それらは平行でない。
+\end{thm}
+
+\begin{proof}
+  直線 \(AB,\ CD\) があるとする。
+  これらが半直線 \(AB,\ CD\) 上の端点以外の一点で交わるとしても一般性は失われない。
+  その交点を \(O\) とする。
+
+  さて、直線 \(AB\) と直線 \(CD\) がもし平行だとすると、直線 \(CD\) も点 \(C\) を基点にしさえすればベクトル \(\overrightarrow{AB}\) を用いて再定義できるから、
+  \[\overrightarrow{AO}=\lambda_1\overrightarrow{AB},\quad \overrightarrow{CO}=\lambda_2\overrightarrow{AB}.\]
+  ゆえに
+  \[\overrightarrow{AC}=\overrightarrow{OC}-\overrightarrow{OA}=(\lambda_1-\lambda_2)\overrightarrow{AB}.\]
+  ところがこれは、\(\lambda_1=\lambda_2\) で \(A\) と \(C\) は一致するか、さもなければ \(C\) が直線 \(AB\) 上にあることになる。
+  しかし、いずれも異なる二直線という前提に反する。
+
+  ゆえに、平行ではない。
+\end{proof}
+
+\begin{thm}\label{251101145301}
+  任意の三点 \(O,A,B\) に対して、\(A\neq O,\) \(B\neq O\) であるとき、
+  \[d(O,A)+d(O,B)=d(A,B)\]
+  ならば、かつそのときに限り、
+  \[\overrightarrow{OB}=-\lambda\overrightarrow{OA} \quad (\lambda>0)\]
+  となる \(\lambda\) が存在する。
+\end{thm}
+
+\begin{proof}
+  \(d(O,A)+d(O,B)=d(A,B)\) より、
+  \[\|\overrightarrow{OA}\|+\|\overrightarrow{OB}\|=\|\overrightarrow{OB}-\overrightarrow{OA}\|.\]
+  両辺を \(2\) 乗して整理すると、
+  \[\|\overrightarrow{OA}\|\|\overrightarrow{OB}\|=-(\overrightarrow{OA},\overrightarrow{OB}).\]
+  さて、\(\|\overrightarrow{OB}+\lambda\overrightarrow{OA}\|=0\) とおくと、
+  \begin{align*}
+    0 &= \|\overrightarrow{OB}+\lambda\overrightarrow{OA}\|^2=(\overrightarrow{OB}+\lambda{\overrightarrow{OA}},\overrightarrow{OB}+\lambda\overrightarrow{OA}) \\
+      &= (\overrightarrow{OA},\overrightarrow{OA})\lambda^2+2(\overrightarrow{OA},\overrightarrow{OB})\lambda+(\overrightarrow{OB},\overrightarrow{OB}) \\
+      &= \|\overrightarrow{OA}\|^2\lambda^2-2\|\overrightarrow{OA}\|\|\overrightarrow{OB}\|\lambda+\|\overrightarrow{OB}\|^2 \\
+      &= (\|\overrightarrow{OA}\|\lambda-\|\overrightarrow{OB}\|)^2.
+  \end{align*}
+  ゆえに、\(\displaystyle \lambda=\frac{\|\overrightarrow{OB}\|}{\|\overrightarrow{OA}\|}\ (>0)\) について \(\overrightarrow{OB}+\lambda\overrightarrow{OA}=\vec{0}.\)
+
+  逆に、\(\overrightarrow{OB}=-\lambda\overrightarrow{OA}\ (\lambda>0)\) のとき、
+  \begin{align*}
+    \|\overrightarrow{AB}\| &= \|\overrightarrow{OB}-\overrightarrow{OA}\|=\|-\lambda\overrightarrow{OA}-\overrightarrow{OA}\| \\
+                            &= \|(-1-\lambda)\overrightarrow{OA}\|=|-1-\lambda|\|\overrightarrow{OA}\| \\
+                            &= (1+\lambda)\|\overrightarrow{OA}\|=\|\overrightarrow{OA}\|+\|\lambda\overrightarrow{OA}\| \\
+                            &= \|\overrightarrow{OA}\|+\|-\overrightarrow{OB}\|=\|\overrightarrow{OA}\|+\|\overrightarrow{OB}\|.
+  \end{align*}
+\end{proof}
+
+\begin{thm}\label{251101145402}
+  任意の三点 \(O,A,B\) に対して、\(A\neq O,\) \(B\neq O\) であるとき、
+  \[|d(O,A)-d(O,B)|=d(A,B)\]
+  ならば、かつそのときに限り、
+  \[\overrightarrow{OB}=\lambda\overrightarrow{OA} \quad (\lambda>0)\]
+  となる \(\lambda\) が存在する。
+\end{thm}
+
+\begin{proof}
+  まず、\(|d(O,A)-d(O,B)|=d(A,B)\) と前提する。
+
+  \(d(O,A)=d(O,B)\) とする。
+  \begin{align*}
+    \sqrt{(\overrightarrow{AB},\overrightarrow{AB})} &= 0 \\
+                                 \overrightarrow{AB} &= \vec{0} \\
+                                 \overrightarrow{OB} &= \overrightarrow{OA}.
+  \end{align*}
+
+  \(d(O,A)>d(O,B)\) とする。
+  \begin{align*}
+                                                 d(O,A)-d(O,B) &= d(A,B) \\
+                                                 d(B,O)+d(B,A) &= d(O,A) \\
+    \text{ある}\ \lambda>0\ \text{について}\ \overrightarrow{BA} &= -\lambda\overrightarrow{BO} \\
+                       \overrightarrow{OA}-\overrightarrow{OB} &= \lambda\overrightarrow{OB} \\
+                                           \overrightarrow{OB} &= \frac{1}{1+\lambda}\overrightarrow{OA}.
+  \end{align*}
+
+  \(d(O,A)<d(O,B)\) とする。
+  \begin{align*}
+                                                 d(O,B)-d(O,A) &= d(A,B) \\
+                                                 d(A,O)+d(A,B) &= d(O,B) \\
+    \text{ある}\ \lambda>0\ \text{について}\ \overrightarrow{AB} &= -\lambda\overrightarrow{AO} \\
+                       \overrightarrow{OB}-\overrightarrow{OA} &= \lambda\overrightarrow{OA} \\
+                                           \overrightarrow{OB} &= (1+\lambda)\overrightarrow{OA}.
+  \end{align*}
+
+  次に、ある \(\lambda>0\) について \(\overrightarrow{OB}=\lambda\overrightarrow{OA}\) と前提する。
+
+  \(\lambda=1\) とする。
+  明らかに \(\|\overrightarrow{AB}\|=0=\|\overrightarrow{OA}\|-\|\overrightarrow{OB}\|.\)
+
+  \(\lambda>1\) とする。
+  \begin{align*}
+    \overrightarrow{OA}+\overrightarrow{AB} &= \lambda\overrightarrow{OA} \\
+                        \overrightarrow{OA} &= -\frac{1}{1-\lambda}\overrightarrow{AB} \\
+                        \overrightarrow{AO} &= -\frac{1}{\lambda-1}\overrightarrow{AB}.
+  \end{align*}
+  ゆえに \(d(A,B)+d(A,O)=d(B,O).\)
+
+  \(\lambda<1\) とする。
+  \begin{align*}
+    \overrightarrow{OB} &= \lambda(\overrightarrow{OB}+\overrightarrow{BA}) \\
+    \overrightarrow{OB} &= \frac{\lambda}{1-\lambda}\overrightarrow{BA} \\
+    \overrightarrow{BO} &= -\frac{\lambda}{1-\lambda}\overrightarrow{BA}.
+  \end{align*}
+  ゆえに \(d(B,A)+d(B,O)=d(A,O).\)
+\end{proof}

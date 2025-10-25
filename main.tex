@@ -1,0 +1,60 @@
+\documentclass[dvipdfmx,12pt]{jbook}
+
+\usepackage[
+  a5paper, % A5判に設定
+  twoside, % 見開きレイアウト
+  top=20mm, % 上余白
+  bottom=20mm, % 下余白
+  inner=20mm, % 内余白
+  outer=15mm % 外余白
+]{geometry}
+
+\usepackage{hyperref}
+\usepackage{makeidx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bm}
+
+\makeindex
+
+\theoremstyle{definition}
+\newtheorem{dfn}{定義}
+\newtheorem*{dfn*}{定義}
+
+\theoremstyle{plain}
+\newtheorem{axm}{公理}
+\newtheorem*{axm*}{公理}
+\newtheorem{thm}{定理}
+\newtheorem*{thm*}{定理}
+\newtheorem{col}{系}
+\newtheorem*{col*}{系}
+\newtheorem{lmm}{補題}
+\newtheorem*{lmm*}{補題}
+
+\renewcommand{\proofname}{\textbf{証明}}
+
+\title{初等幾何学の現代的公理系}
+\date{2026.1.9}
+\author{Tsugu}
+
+\begin{document}
+  \pagenumbering{roman}
+  \maketitle
+  \input{ch00.tex}
+  \tableofcontents
+  \setcounter{page}{1}
+  \pagenumbering{arabic}
+  \input{ch01.tex}
+  \input{ch02.tex}
+  \input{ch03.tex}
+  \input{ch04.tex}
+  \input{ch05.tex}
+  \input{ch06.tex}
+  \input{ch07.tex}
+  \begin{thebibliography}{99}
+    \bibitem{seki} 赤攝也.『現代の初等幾何学』(ちくま学芸文庫). 筑摩書房, 2019.
+  \end{thebibliography}
+  \clearpage
+  \printindex
+\end{document}

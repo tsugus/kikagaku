@@ -1,0 +1,109 @@
+\chapter{ベクトル空間で成り立つ定理}
+
+\begin{thm}\label{251101134501}
+  \(\vec{a},\ \vec{b}\) を任意のベクトルとするとき、
+  \[\vec{a}+\vec{x}=\vec{b}\]
+  を満たすベクトル \(\vec{x}\) がただ一つ存在する。
+\end{thm}
+
+\begin{proof}
+  \(\vec{x}=(-\vec{a})+\vec{b}\) とおくと、
+  \begin{align*}
+    \vec{a}+\vec{x} &= \vec{a}+\{(-\vec{a})+\vec{b}\}=\{\vec{a}+(-\vec{a})\}+\vec{b} \\
+                    &= \vec{0}+\vec{b}=\vec{b}.
+  \end{align*}
+  ゆえに、\(\vec{x}\) は存在する。
+
+  次に、\(\vec{a}+\vec{y}=\vec{b}\) となる \(\vec{y}\) があるとすると、
+  \begin{align*}
+               \vec{a}+\vec{x} &= \vec{a}+\vec{y} \\
+    -\vec{a}+(\vec{a}+\vec{x}) &= -\vec{a}+(\vec{a}+\vec{y}) \\
+    (-\vec{a}+\vec{a})+\vec{x} &= (-\vec{a}+\vec{a})+\vec{y} \\
+               \vec{0}+\vec{x} &= \vec{0}+\vec{y} \\
+                       \vec{x} &= \vec{y}.
+  \end{align*}
+  ゆえに、\(\vec{x}\) はただ一つ。
+\end{proof}
+
+\begin{dfn}
+  \(\vec{a}+\vec{x}=\vec{b}\) を満たすベクトル \(\vec{x}\) を
+  \[\vec{a}-\vec{b}\]
+  と表す。
+\end{dfn}
+
+\begin{thm}\label{251101134702}
+  \(0\vec{a}=\vec{0}.\)
+\end{thm}
+
+\begin{proof}
+  まず、
+  \[0\vec{a}+0\vec{a}=(0+0)\vec{a}=0\vec{a}.\]
+  また、
+  \[0\vec{a}+\vec{0}=0\vec{a}.\]
+  ゆえに、定理 \ref{251101134501} より
+  \[0\vec{a}=\vec{0}.\]
+\end{proof}
+
+\begin{thm}\label{251101134703}
+  \(\lambda\vec{0}=\vec{0}.\)
+\end{thm}
+
+\begin{proof}
+  まず、
+  \[\lambda\vec{0}+\lambda\vec{0}=\lambda(\vec{0}+\vec{0})=\lambda\vec{0}.\]
+  また、
+  \[\lambda\vec{0}+\vec{0}=\lambda\vec{0}.\]
+  ゆえに、定理 \ref{251101134501} より
+  \[\lambda\vec{0}=\vec{0}.\]
+\end{proof}
+
+\begin{thm}
+  \((-1)\vec{a}=-\vec{a}.\)
+\end{thm}
+
+\begin{proof}
+  まず、
+  \begin{align*}
+    \vec{a}+(-1)\vec{a} &= 1\vec{a}+(-1)\vec{a}=\{1+(-1)\}\vec{a} \\
+                        &= 0\vec{a}=\vec{0}.
+  \end{align*}
+  また、
+  \[\vec{a}+(-\vec{a})=\vec{0}.\]
+  ゆえに、定理 \ref{251101134501} より
+  \[(-1)\vec{a}=-\vec{a}.\]
+\end{proof}
+
+\begin{thm}
+  \(\lambda\vec{a}=\vec{0}\) であるための必要十分条件は、\(\lambda=0\) または \(\vec{a}=\vec{0}.\)
+\end{thm}
+
+\begin{proof}
+  まず、必要条件であることを示す。
+  \(\lambda=0\) ならばそれでよし、ゆえに \(\lambda\neq0\) とすると、
+  \begin{align*}
+                    \frac{1}{\lambda}(\lambda\vec{a}) &= \frac{1}{\lambda}\vec{0} \\
+    \left(\frac{1}{\lambda}\cdot\lambda\right)\vec{a} &= \vec{0} \\
+                                             1\vec{a} &= \vec{0} \\
+                                              \vec{a} &= \vec{0}.
+  \end{align*}
+  次に、十分条件であることを示す。
+  これは定理 \ref{251101134702} と \ref{251101134703} より明らか。
+\end{proof}
+
+\begin{dfn}[ベクトルの平行]
+  零ベクトルでない二つのベクトル \(\vec{a},\ \vec{b}\) の一方が他方のスカラー倍であることを、\textbf{平行}\index{へいこう@(ベクトルの)平行}であるといい、
+  \[\vec{a}/\!/\vec{b}\]
+  と書く。\footnote{\(\vec{b}\neq\vec{0}\) のとき、\(\vec{0}=0\vec{b}\) であるにもかかわらず、\(\vec{b}=\lambda\vec{0}\) となる \(\lambda\) は存在しない。
+  この非対称性ゆえに、私たちの公理系では零ベクトルを平行関係から除外する。}
+\end{dfn}
+
+\begin{thm}
+  \(\vec{a}/\!/\vec{b}\) ならば \(\vec{b}/\!/\vec{a}.\)
+\end{thm}
+
+\begin{proof}
+  \(\vec{a}=\lambda\vec{b}\) と表されたとする。
+  \(\vec{a}\neq\vec{0}\) より \(\lambda\neq0.\)
+  ゆえに \(\displaystyle \vec{b}=\frac{1}{\lambda}\vec{a}\) であり、
+  \(\vec{b}\neq\vec{0}\) はもともと成り立っている。
+\end{proof}
