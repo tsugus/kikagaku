@@ -1,0 +1,536 @@
+\chapter{補遺２}
+
+\setcounter{thm}{0}
+\setcounter{dfn}{0}
+\setcounter{col}{0}
+\setcounter{lmm}{0}
+\counterwithin{thm}{chapter}
+\counterwithin{dfn}{chapter}
+\counterwithin{col}{chapter}
+\counterwithin{lmm}{chapter}
+
+この章は本文から独立している。
+しかし、本文の内容を \(n\) 次元に拡張して考える場合、ここに述べる行列式の知識があると便利である。
+ただし、行列の演算に関しては既知とする。
+
+\section*{行列式の基本定理}
+
+\begin{dfn}[置換]
+  集合 \(\{1,2,\ldots,n\}\) からそれ自身への一対一対応を\textbf{置換}\index{ちかん@置換}という。
+\end{dfn}
+
+\begin{dfn}[順列]
+  置換 \(p\) について得られる数の並び
+  \[\langle p(1),p(2),\ldots,p(n)\rangle\]
+  を\textbf{順列}\index{じゅんれつ@順列}といい、
+  \[\langle p_1,p_2,\ldots,p_n\rangle\]
+  とも表す。
+\end{dfn}
+
+\begin{dfn}[転倒]
+  \(n\) 個の数の順列 \(\langle p_1,p_2,\ldots,p_n\rangle\) において
+  \[i<j \quad\text{かつ}\quad p_i>p_j\]
+  であるとき、二数の組 \((p_i,p_j)\) を\textbf{転倒}\index{てんとう@転倒}という。
+\end{dfn}
+
+\begin{dfn}[偶順列、奇順列]
+  偶数個の転倒を含む順列を\textbf{偶順列}\index{ぐうじゅんれつ@偶順列}、奇数個の転倒を含む順列を\textbf{奇順列}\index{きじゅんれつ@奇順列}という。
+\end{dfn}
+
+\begin{dfn}[符号]
+  順列 \(\langle p_1,p_2,\ldots,p_n\rangle\) の\textbf{符号}\index{ふごう@符号} \(\mathrm{sgn}\langle p_1,p_2,\ldots,p_n\rangle\) を
+  \begin{equation*}
+    \mathrm{sgn}\langle p_1,p_2,\ldots,p_n\rangle=
+    \begin{cases}
+      1  & (偶順列) \\
+      -1 & (奇順列)
+    \end{cases}
+  \end{equation*}
+  と定める。
+  順列が定まれば置換が定まり、逆も成り立つので、それらは同一視することができる。
+  ゆえに、\(\mathrm{sgn}\langle p_1,p_2,\ldots,p_n\rangle\) を \(\mathrm{sgn}(p)\) と書くことがある。
+\end{dfn}
+
+\begin{dfn}[互換]
+  順列 \(\langle p_1,p_2,\ldots,p_n\rangle\) に対して二つの数 \(p_i\) と \(p_j\) を入れ替えることを\textbf{互換}\index{ごかん@互換}といい、
+  \[(p_i\ p_j)\]
+  で表す。
+\end{dfn}
+
+\begin{thm}\label{251218113701}
+  順列 \(\langle p_1,p_2,\ldots,p_n\rangle\) は、何回かの互換によって順列 \(\langle 1,2,\ldots,n\rangle\) にすることができ、その逆もできる。
+\end{thm}
+
+\begin{proof}
+  まず、\(1\) 番目の数が \(1\) でないなら、その数と \(1\) の互換を行う。
+  すると、\(1\) が \(1\) 番目に来る。
+  次に、\(2\) 番目の数が \(2\) でないなら、\(2\) は \(2\) 番目より後にあるから、\(2\) 番目の数と \(2\) の互換を行う。
+  以下同様に、\(i\) 番目の数が \(i\) でないなら、その数と \(i\) の互換を行う。
+  これの結果が \(\langle 1,2,\ldots,n\rangle\) になるのは明らか。
+
+  逆の場合も同様である。
+\end{proof}
+
+\begin{thm}\label{251218094101}
+  順列 \(\langle p_1,p_2,\ldots,p_n\rangle\) に対し、\(p_k\) と \(p_l\) \((k<l)\) の互換を行うと、順列の偶奇が入れ替わる。
+  ゆえに、
+  \begin{align*}
+    &\mathrm{sgn}\langle p_1,\ldots,p_l,\ldots,p_k,\ldots,p_n\rangle \\
+    &=-\mathrm{sgn}\langle p_1,\ldots,p_k,\ldots,p_l,\ldots,p_n\rangle.
+  \end{align*}
+\end{thm}
+
+\begin{proof}
+  \(p_k\) と \(p_l\) の互換を行ったときの転倒の増減について考える。
+
+  \(p_k<p_l\) とする。
+  \(p_i\) \((k<i<l)\) のうち、
+  \begin{align*}
+    & p_k \text{より小さいものは} r \text{個、} \\
+    & p_k \text{より大きく} p_l \text{より小さいものは} s \text{個、} \\
+    & p_l \text{より大きいものは} t \text{個}
+  \end{align*}
+  とする。
+  すると、
+  \begin{align*}
+    & (p_i,p_k) \text{の形の転倒は} s+t \text{個増え、} \\
+    & (p_k,p_i) \text{の形の転倒は} r \text{個減り、} \\
+    & (p_i,p_l) \text{の形の転倒は} t \text{個減り、} \\
+    & (p_l,p_i) \text{の形の転倒は} r+s \text{個増え、} \\
+    & (p_l,p_k) \text{が} 1 \text{個増える。}
+  \end{align*}
+  ゆえに、総数は
+  \[(s+t)-r-t+(r+s)+1=2s+1\]
+  だけ増える。
+  すなわち、奇数個だけ増えるので、符号は反転する。
+
+  \(p_k>p_l\) の場合もほぼ同様。
+\end{proof}
+
+\begin{thm}\label{251218113702}
+  順列 \(\langle 1,2,\ldots,n\rangle\) に互換を \(k\) 回適用した結果が順列 \(\langle p_1,p_2,\ldots,p_n\rangle\) ならば、
+  \[\mathrm{sgn}\langle p_1,p_2,\ldots,p_n\rangle=(-1)^k.\]
+
+  また、順列 \(\langle p_1,p_2,\ldots,p_n\rangle\) に互換を \(k\) 回適用した結果が順列 \(\langle 1,2,\ldots,n\rangle\) ならば、
+  \[\mathrm{sgn}\langle p_1,p_2,\ldots,p_n\rangle=(-1)^k.\]
+\end{thm}
+
+\begin{proof}
+  定理 \ref{251218094101} より、
+  \[\mathrm{sgn}\langle p_1,p_2,\ldots,p_n\rangle=(-1)^k\mathrm{sgn}\langle 1,2,\ldots,n\rangle=(-1)^k.\]
+
+  第二の場合についても同様。
+\end{proof}
+
+\begin{thm}
+  任意の置換は互換の連続適用によって表され、その回数は常に偶数か常に奇数かである。
+\end{thm}
+
+\begin{proof}
+  任意の置換 \(p\) は定理 \ref{251218113701} により何回かの互換として表される。
+
+  さて、\(p\) が二通りの互換の連続適用で表されうるとし、それぞれの回数を \(k,\ l\) としよう。
+  定理 \ref{251218113702} より
+  \[(-1)^k=\mathrm{sgn}(p)=(-1)^l.\]
+  ゆえに、\(k\) と \(l\) の偶奇は一致しなければならない。
+\end{proof}
+
+\begin{dfn}[偶置換、奇置換]
+  偶数回の互換の連続と結果が等しい置換を\textbf{偶置換}\index{ぐうちかん@偶置換}、奇数回の互換の連続と結果が等しい置換を\textbf{奇置換}\index{きちかん@奇置換}という。
+\end{dfn}
+
+\begin{thm}\label{251218233301}
+  与えられた順列 \(\langle p_1,p_2,\ldots,p_n\rangle\) から
+  \begin{equation}\label{251218110201}
+    (1,p_1),\ (2,p_2),\ \ldots,\ (n,p_n)
+  \end{equation}
+  を作る。
+  これらの各組の第二項が \(1,2,\ldots,n\) の順になるように組を並べ替えて、
+  \begin{equation}\label{251218110202}
+    (q_1,1),\ (q_2,2),\ \ldots,\ (q_n,n)
+  \end{equation}
+  が得られるとする。
+  このとき、
+  \[\mathrm{sgn}\langle p_1,p_2,\ldots,p_n\rangle=\mathrm{sgn}\langle q_1,q_2,\ldots,q_n\rangle.\]
+\end{thm}
+
+\begin{proof}
+  (\ref{251218110202}) の \(q_i\) \((1\leqq i\leqq n)\) を \(q(i)\) と見なせば、(\ref{251218110202}) を得るときに用いられた置換は \(q\) である。
+  これは組の第一項に着目すれば明らかである。
+  ゆえに、置換 \(q\) は \(\langle 1,2,\ldots,n\rangle\) を \(\langle q_1,q_2,\ldots,q_n\rangle\) に変換し、\(\langle p_1,p_2,\ldots,p_n\rangle\) を \(\langle 1,2,\ldots,n\rangle\) に変換する。
+
+  定理 \ref{251218113701} より、置換 \(q\) は何回かの互換で表されるので、その回数を \(k\) とする。
+  すると、定理 \ref{251218113702} より、
+  \[\mathrm{sgn}\langle p_1,p_2,\ldots,p_n\rangle=(-1)^k=\mathrm{sgn}\langle q_1,q_2,\ldots,q_n\rangle.\]
+\end{proof}
+
+\begin{dfn}[行列式]\label{251218223401}
+  \(n\) 次の正方行列 \(A=(a_{ij})\) の行列式 \(|A|=|a_{ij}|\) を、
+  \[|A|=\sum_{\langle p_1,p_2,\ldots,p_n\rangle}\mathrm{sgn}\langle p_1,p_2,\ldots,p_n\rangle a_{1 p_1}a_{2 p_2}\cdots a_{n p_n}\]
+  と定義する。
+
+  \(|A|\) は \(\det A\) とも書かれる。
+\end{dfn}
+
+\begin{thm}\label{251218172101}
+  \(n\) 次正方行列を列ベクトル \(\bm{a_\alpha}\) \((\alpha=1,\ldots,n)\) によって \(
+    \begin{pmatrix}
+      \bm{a_1} & \bm{a_2} & \cdots &\bm{a_n}
+    \end{pmatrix}
+  \) と表すとき、
+  \begin{enumerate}
+    \item\label{251220215901} \(
+        \begin{vmatrix}
+          \bm{a_1} & \cdots & \bm{a'_j}+\bm{a''_j} & \cdots & \bm{a_n}
+        \end{vmatrix} \\
+        =
+        \begin{vmatrix}
+          \bm{a_1} & \cdots & \bm{a'_j} & \cdots & \bm{a_n}
+        \end{vmatrix}
+        +
+        \begin{vmatrix}
+          \bm{a_1} & \cdots & \bm{a''_j} & \cdots & \bm{a_n}
+        \end{vmatrix}
+      \)
+    \item\label{251220215902} \(
+        \begin{vmatrix}
+          \bm{a_{1}} & \cdots & c\bm{a_j} & \cdots & \bm{a_n}
+        \end{vmatrix} \\
+        =c
+        \begin{vmatrix}
+          \bm{a_{1}} & \cdots & \bm{a_j} & \cdots & \bm{a_n}
+        \end{vmatrix}
+      \)
+    \item\label{251220215903} \(
+        \begin{vmatrix}
+          \bm{a_{1}} & \cdots & \bm{a_k} & \cdots & \bm{a_j} & \cdots & \bm{a_n}
+        \end{vmatrix} \\
+        =-
+        \begin{vmatrix}
+          \bm{a_{1}} & \cdots & \bm{a_j} & \cdots & \bm{a_k} & \cdots & \bm{a_n}
+        \end{vmatrix}
+      \)
+  \end{enumerate}
+  が成り立つ。
+  \ref{251220215901} と \ref{251220215902} を行列式の\textbf{多重線形性}\index{たじゅうせんけいせい@多重線形性}といい、\ref{251220215903} を行列式の\textbf{交代性}\index{こうたいせい@交代性}という。
+\end{thm}
+
+\begin{proof}
+  \begin{enumerate}
+    \item
+      \begin{align*}
+        & \sum_{\langle p_1,p_2,\ldots,p_n\rangle}\mathrm{sgn}\langle p_1,p_2,\ldots,p_n\rangle a_{1 p_1}\cdots(a'_{j p_{j}}+a''_{j p_{j}})\cdots a_{n p_n} \\
+        &=\sum_{\langle p_1,p_2,\ldots,p_n\rangle}\mathrm{sgn}\langle p_1,p_2,\ldots,p_n\rangle a_{1 p_1}\cdots a'_{j p_{j}}\cdots a_{n p_n} \\
+        &+\sum_{\langle p_1,p_2,\ldots,p_n\rangle}\mathrm{sgn}\langle p_1,p_2,\ldots,p_n\rangle a_{1 p_1}\cdots a''_{j p_{j}}\cdots a_{n p_n}.
+      \end{align*}
+    \item
+      \begin{align*}
+        & \sum_{\langle p_1,p_2,\ldots,p_n\rangle}\mathrm{sgn}\langle p_1,p_2,\ldots,p_n\rangle a_{1 p_1}\cdots(c\cdot a_{j p_{j}})\cdots a_{n p_n} \\
+        &=c\sum_{\langle p_1,p_2,\ldots,p_n\rangle}\mathrm{sgn}\langle p_1,p_2,\ldots,p_n\rangle a_{1 p_1}\cdots a_{j p_{j}}\cdots a_{n p_n}.
+      \end{align*}
+    \item 順列 \(\langle p_1,\ldots p_n\rangle\) に \(p_j\) と \(p_k\) の互換を行って得られる順列を \(\langle q_1,\ldots q_n\rangle\) とすると、
+    \[\mathrm{sgn}\langle p_1,\ldots,p_n\rangle=-\mathrm{sgn}\langle q_1,\ldots,q_n\rangle.\]
+    また、\(\langle p_1,\ldots,p_n\rangle\) がすべての順列を渡るとき、\(\langle q_1,\ldots,q_n\rangle\) もすべての順列を渡る。
+    ゆえに、
+      \begin{align*}
+        & \sum_{\langle p_1,p_2,\ldots,p_n\rangle}\mathrm{sgn}\langle p_1,p_2,\ldots,p_n\rangle a_{1 p_1}\cdots a_{n p_n} \\
+        &=-\sum_{\langle q_1,q_2,\ldots,q_n\rangle}\mathrm{sgn}\langle q_1,q_2,\ldots,q_n\rangle a_{1 q_1}\cdots a_{n q_n}.
+      \end{align*}
+  \end{enumerate}
+\end{proof}
+
+\begin{thm}\label{251219003501}
+  \(n\) 次正方行列を列ベクトル \(\bm{a_\alpha}\) \((\alpha=1,\ldots,n)\) によって \(
+    \begin{pmatrix}
+      \bm{a_1} & \bm{a_2} & \cdots &\bm{a_n}
+    \end{pmatrix}
+  \) と表すとき、\(\bm{a_j}=\bm{a_k}\) ならば
+  \[
+    \begin{vmatrix}
+      \bm{a_{1}} & \cdots & \bm{a_j} & \cdots & \bm{a_k} & \cdots & \bm{a_n}
+    \end{vmatrix}
+    =0.
+  \]
+\end{thm}
+
+\begin{proof}
+  \(\bm{a_j}=\bm{a_k}\) とする。
+  定理 \ref{251218172101} の \ref{251220215903} より \(|A|=-|A|.\)
+  ゆえに、\(|A|=0.\)
+\end{proof}
+
+\begin{thm}
+  \(n\) 次正方行列の一つの列（行）の実数倍を他の列（行）に加えても行列式の値は変わらない。
+\end{thm}
+
+\begin{proof}
+  \begin{align*}
+    &
+    \begin{vmatrix}
+      \bm{a_1} & \cdots & \bm{a_j}+c\cdot\bm{a_k} & \cdots & \bm{a_k} & \cdots & \bm{a_n}
+    \end{vmatrix} \\
+    &=
+    \begin{vmatrix}
+      \bm{a_1} & \cdots & \bm{a_j} & \cdots & \bm{a_k} & \cdots & \bm{a_n}
+    \end{vmatrix} \\
+    &+c
+    \begin{vmatrix}
+      \bm{a_1} & \cdots & \bm{a_k} & \cdots & \bm{a_k} & \cdots & \bm{a_n}
+    \end{vmatrix} \\
+    &=
+    \begin{vmatrix}
+      \bm{a_1} & \cdots & \bm{a_j} & \cdots & \bm{a_k} & \cdots & \bm{a_n}
+    \end{vmatrix}.
+  \end{align*}
+
+  行についても同様。
+\end{proof}
+
+\begin{thm}
+  正方行列 \(A\) とその転置行列 \(A^\top\) について、
+  \[|A^\top|=|A|.\]
+\end{thm}
+
+\begin{proof}
+  \(A=(a_{ij}),\) \(A^\top=(b_{ij})\) とする。
+  \begin{align*}
+    |A^\top| &= \sum_{\langle p_1,p_2,\ldots,p_n\rangle}\mathrm{sgn}\langle p_1,p_2,\ldots,p_n\rangle b_{1 p_1}b_{2 p_2}\cdots b_{n p_n} \\
+             &= \sum_{\langle p_1,p_2,\ldots,p_n\rangle}\mathrm{sgn}\langle p_1,p_2,\ldots,p_n\rangle a_{p_1 1}a_{p_2 2}\cdots a_{p_n n}.
+  \end{align*}
+
+  ここで、積の順番を並べ替えて
+  \[a_{p_1 1}a_{p_2 2}\cdots a_{p_n n}=a_{1 q_1}a_{2 q_2}\cdots a_{n q_n}\]
+  となるようにすると、定理 \ref{251218233301} より
+  \[\mathrm{sgn}\langle p_1,p_2,\ldots,p_n\rangle=\mathrm{sgn}\langle q_1,q_2,\ldots,q_n\rangle.\]
+
+  \(\langle p_1,p_2,\ldots,p_n\rangle\) がすべての順列を渡るとき、\(\langle q_1,q_2,\ldots,q_n\rangle\) もすべての順列を渡る。
+  ゆえに、
+  \[|A^\top|=\sum_{\langle q_1,q_2,\ldots,q_n\rangle}\mathrm{sgn}\langle q_1,q_2,\ldots,q_n\rangle a_{1 q_1}a_{2 q_2}\cdots a_{n q_n}=|A|.\]
+\end{proof}
+
+\begin{col*}
+  定理 \ref{251218172101}, \ref{251219003501} は、列ベクトルの行ベクトルと見なした正方行列だけでなく、行ベクトルの列ベクトルと見なしたものについても成り立つ。
+\end{col*}
+
+\begin{lmm}\label{251221005801}
+  \(n\) 次正方行列 \(
+    \begin{pmatrix}
+      \bm{a_1} & \bm{a_2} & \ldots & \bm{a_n}
+    \end{pmatrix}
+  \) について、
+  \begin{gather*}
+    \begin{vmatrix}
+      \bm{a_{p_1}} & \bm{a_{p_2}} & \ldots & \bm{a_{p_n}}
+    \end{vmatrix}
+    =\mathrm{sgn}\langle p_1,\ldots,p_n\rangle
+    \begin{vmatrix}
+      \bm{a_1} & \bm{a_2} & \ldots & \bm{a_n}
+    \end{vmatrix}.
+  \end{gather*}
+\end{lmm}
+
+\begin{proof}
+  \(k\) 回の互換で順列 \(\langle p_1,\ldots,p_n\rangle\) から \(\langle 1,\ldots,n\rangle\) が得られるとすると、
+  \[\mathrm{sgn}\langle p_1,\ldots,p_n\rangle=(-1)^k.\]
+  一方、
+  \[
+    \begin{pmatrix}
+      \bm{a_{p_1}} & \bm{a_{p_2}} \cdots & \bm{a_{p_n}}
+    \end{pmatrix}
+    =(-1)^k
+    \begin{pmatrix}
+      \bm{a_1} & \bm{a_2} \cdots & \bm{a_n}
+    \end{pmatrix}.
+  \]
+\end{proof}
+
+\begin{thm}
+  \[|AB|=|A||B|.\]
+\end{thm}
+
+\begin{proof}
+  \(A=(a_{ij}),\) \(B=(b_{ij})\) を \(n\) 次の正方行列とする。
+  \(B\) を行ベクトル \(\bm{b_i}\) \((i=1,\cdots,n)\) で表すと、
+  \(AB\) の第 \(i\) 行は、
+  \begin{gather*}
+    \begin{pmatrix}
+      \displaystyle\sum_{k=1}^n a_{ik}b_{k1} & \displaystyle\sum_{k=1}^n a_{ik}b_{k2} & \cdots & \displaystyle\sum_{k=1}^n a_{ik}b_{kn}
+    \end{pmatrix} \\
+    =\sum_{k=1}^n a_{ik}
+    \begin{pmatrix}
+      b_{k1} & b_{k2} & \cdots & b_{kn}
+    \end{pmatrix}
+    =\sum_{k=1}^n a_{ik}\bm{b_k}.
+  \end{gather*}
+  ゆえに、
+  \[AB=
+    \begin{pmatrix}
+      \displaystyle\sum_{k_1=1}^n a_{1 k_1}\bm{b_{k_1}} \\
+      \displaystyle\sum_{k_2=1}^n a_{2 k_2}\bm{b_{k_2}} \\
+      \vdots                                            \\
+      \displaystyle\sum_{k_n=1}^n a_{n k_N}\bm{b_{k_n}}
+    \end{pmatrix}.
+  \]
+  よって、
+  \[|AB|=\sum_{k_1=1}^n\ldots\sum_{k_n=1}^n a_{1 p_{k_1}}\cdots a_{n p_{k_n}}
+    \begin{vmatrix}
+      \bm{b_{p_{k_1}}} \\
+      \bm{b_{p_{k_2}}} \\
+      \vdots           \\
+      \bm{b_{p_{k_n}}}
+    \end{vmatrix}.
+  \]
+  ここで、\(p_{k_1},\ldots,p_{k_n}\) の中に同じものがあれば \(
+  \begin{vmatrix}
+      \bm{b_{p_{k_1}}} \\
+      \bm{b_{p_{k_2}}} \\
+      \vdots           \\
+      \bm{b_{p_{k_n}}}
+  \end{vmatrix}
+  =0\) であるので、
+  総和は任意の順列 \(\langle q_1,\ldots,q_n\rangle\) のみに関するものと見なしてよい。
+  ゆえに、補題 \ref{251221005801} より
+  \[|AB|=\sum_{\langle q_1,\ldots,q_n\rangle}\mathrm{sgn}\langle q_1,\ldots,q_n\rangle a_{1 q_1}a_{2 q_2}\cdots a_{n q_n}|B|=|A||B|.\]
+\end{proof}
+
+\begin{dfn}[小行列式、余因子]
+  \(n\) 次の正方行列 \(A=(a_{ij})\) について、\(A\) から第 \(i\) 行と第 \(j\) 列を取り除いて得られる \(n-1\) 次正方行列を \(A_{ij}\) と表すとき、
+  \[|A_{ij}|\]
+  を \(A\) の \((i,j)\) \textbf{小行列式}\index{しょうぎょうれつしき@小行列式}といい、
+  \[\tilde{a}_{ij}=(-1)^{i+j}|A_{ij}|\]
+  を \(A\) の \((i,j)\) \textbf{余因子}\index{よいんし@余因子}という。
+\end{dfn}
+
+\begin{lmm}\label{251220165401}
+  \(n\) 次正方行列 \(A=(a_{ij})\) について、以下のことが成り立つ。
+  \begin{enumerate}
+    \item \(A\) の第 \(n\) 行の成分が \(a_{nn}\) を除いてすべて \(0\) であるとき、\(|A|=a_{nn}|A_{nn}|.\)
+    \item \(A\) の第 \(1\) 行の成分が \(a_{11}\) を除いてすべて \(0\) であるとき、\(|A|=a_{11}\tilde{a}_{11}.\)
+  \end{enumerate}
+\end{lmm}
+
+\begin{proof}
+  \begin{enumerate}
+    \item 行列式の定義より、
+      \[|A|=\sum_{\langle p_1,\ldots,p_n\rangle}\mathrm{sgn}\langle p_1,\ldots,p_n\rangle a_{1 p_1}\cdots a_{n p_n}.\]
+      ここで、\(p_n\neq n\) ならば \(a_{n p_n}=0\) であるので、上の和は順列 \(\langle p_1,\ldots,p_{n-1},n\rangle\) のみの総和と見なしてよい。
+
+      さて、転倒の個数に着目すると、
+      \[\mathrm{sgn}\langle p_1,\ldots,p_{n-1},n\rangle=\mathrm{sgn}\langle p_1,\ldots,p_{n-1}\rangle.\]
+
+      ゆえに、
+      \begin{align*}
+        |A|=\sum_{\langle p_1,\ldots,p_{n-1}\rangle}\mathrm{sgn}\langle p_1,\ldots,p_{n-1}\rangle a_{1 p_1}\cdots a_{n-1 p_{n-1}}a_{nn} \\
+        =a_{nn}
+        \begin{vmatrix}
+          a_{11}     & \cdots & a_{1\,n-1}   \\
+          \vdots     &        & \vdots       \\
+          a_{n-1\,1} & \cdots & a_{n-1\,n-1}
+        \end{vmatrix}.
+      \end{align*}
+    \item \(A\) に行の交換を \(1\) 回、列の交換を \(1\) 回行えば、第一の場合に帰着できる。
+  \end{enumerate}
+\end{proof}
+
+\begin{thm}[展開公式]
+  \(n\) 次正方行列 \(A=(a_{ij})\) について、
+  \begin{enumerate}
+    \item\label{251220160501} \(\displaystyle |A|=\sum_{k=1}^n a_{ik}\tilde{a}_{ik}\)
+    \item\label{251220160502} \(\displaystyle |A|=\sum_{k=1}^n a_{kj}\tilde{a}_{kj}\)
+  \end{enumerate}
+  が成り立つ。
+\end{thm}
+
+\begin{proof}
+  \ref{251220160502} の場合は、転置行列を考えることにより \ref{251220160501} の場合に帰着できるので、\ref{251220160501} のみを示す。
+
+  まず、\(i=1\) の場合を考える。
+  \begin{gather}
+    |A|=
+      \begin{vmatrix}
+        a_{11} & 0      & \cdots & 0      \\
+        a_{21} & a_{22} & \cdots & a_{2n} \\
+        \vdots & \vdots &        & \vdots \\
+        a_{n1} & a_{n2} & \cdots & a_{nn}
+      \end{vmatrix}
+                  +
+      \begin{vmatrix}
+        0      & a_{12} & \cdots & 0      \\
+        a_{21} & a_{22} & \cdots & a_{2n} \\
+        \vdots & \vdots &        & \vdots \\
+        a_{n1} & a_{n2} & \cdots & a_{nn}
+      \end{vmatrix} \notag \\
+        +\cdots+
+      \begin{vmatrix}
+        0          & \cdots     & 0          & a_{1n} \\
+        a_{21}     & \cdots     & a_{2\,n-1} & a_{2n} \\
+        \vdots     &            & \vdots     & \vdots \\
+        a_{n1}     & a_{n2}     & a_{n\,n-1} & a_{nn}
+      \end{vmatrix}. \label{251220164801}
+  \end{gather}
+  式 \eqref{251220164801} の第 \(1\) 項は、補題 \ref{251220165401} より、\(a_{11}\tilde{a}_{11}\) に等しい。
+  第 \(j\) 項については、隣り合う列の交換を繰り返して第 \(j\) 列を第 \(1\) 列に移すことと、補題 \eqref{251220165401} より、\((-1)^{j-1}a_{1j}|A_{1j}|\) すなわち \(a_{1j}\tilde{a}_{1j}\) に等しい。
+
+  ゆえに、\(\displaystyle |A|=\sum_{k=1}^n a_{1k}\tilde{a}_{1k}.\)
+
+  一般の \(i\) については、式 \eqref{251220164801} と同様に、ただし、ただ一つの成分を残して他の成分がすべて \(0\) である行が第 \(1\) 行ではなく第 \(i\) 行になるよう、\(n\) 個の行列式の和に分解する。
+
+  この式の第 \(j\) 項について、隣り合う行の交換と隣り合う列の交換によって、\(a_{ij}\) が第 \(1\) 行・第 \(1\) 列に来るようにすると、式 \eqref{251220164801} と同様の理由により、第 \(j\) 項は \((-1)^{(i-1)+(j-1)}a_{ij}|A_{ij}|\) に等しくなるが、これは \(a_{ij}\tilde{a}_{ij}\) に等しい。
+
+  ゆえに、\(\displaystyle |A|=\sum_{k=1}^n a_{ik}\tilde{a}_{ik}.\)
+\end{proof}
+
+\begin{dfn}[クロネッカーのデルタ]
+  記号 \(\delta_{ij}\) を
+  \begin{equation*}
+    \delta_{ij}=
+    \begin{cases}
+      1 & (i=j \text{のとき})     \\
+      0 & (i\neq j \text{のとき})
+    \end{cases}
+  \end{equation*}
+  と定める。
+  この記号は\textbf{クロネッカーのデルタ}\index{くろねっかーのでるた@クロネッカーのデルタ}とよばれる。
+\end{dfn}
+
+\begin{thm}\label{260110164301}
+  \(n\) 次正方行列 \(A=(a_{ij})\) と \(k,l=1,2,\ldots,n\) に対して、
+  \begin{enumerate}
+    \item\label{251221033701} \(\displaystyle \sum_{j=1}^n a_{kj}\tilde{a}_{lj}=\delta_{kl}|A|\)
+    \item\label{251221033702} \(\displaystyle \sum_{i=1}^n a_{ik}\tilde{a}_{il}=\delta_{kl}|A|\)
+  \end{enumerate}
+  が成り立つ。
+\end{thm}
+
+\begin{proof}
+  転置行列を考えれば \ref{251221033702} は \ref{251221033701} に帰着されるので、\ref{251221033702} のみを示す。
+
+  \(k=l\) ならば展開公式そのものである。
+  それゆえ、\(k\neq l\) とする。
+
+  \(A\) の第 \(l\) 行を第 \(k\) 行で置き換えた行列を \(A'\) とする。
+
+  \(A'\) には全く等しい行が二つあるので、\(|A'|=0\) である。
+  この左辺の \(|A'|\) を第 \(l\) 行について展開すれば、目的の式が得られる。
+\end{proof}
+
+\begin{dfn}[余因子行列]
+  \(n\) 次正方行列 \(A=(a_{ij})\) に対して、その \((j,i)\) 余因子を \((i,j)\) 成分とする行列 \(\widetilde{A}=(\tilde{a}_{ji})\) を\textbf{余因子行列}\index{よいんしぎょうれつ@余因子行列}という。
+  （作るときに行と列を入れ替えることに注意。）
+\end{dfn}
+
+\begin{thm}
+  \(n\) 次正方行列 \(A\) に対して、
+  \[A\widetilde{A}=\widetilde{A}A=|A|E_n.\]
+  ここで \(E_n\) は \(n\) 次の単位行列。
+\end{thm}
+
+\begin{proof}
+  \(A\widetilde{A}\) の \((k,l)\) 成分は \(\displaystyle \sum_{j=1}^n a_{kj}\tilde{a}_{lj}\) であり、定理 \ref{260110164301} より \(\delta_{kl}|A|\) に等しい。
+  \(\widetilde{A}A\) についても同様。
+\end{proof}
+
+\begin{col*}
+  正方行列 \(A\) の逆行列 \(A^{-1}\) について、
+  \[A^{-1}=\frac{1}{|A|}\widetilde{A}.\]
+\end{col*}
