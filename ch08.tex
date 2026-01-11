@@ -286,7 +286,7 @@
   行についても同様。
 \end{proof}
 
-\begin{thm}
+\begin{thm}\label{260111170401}
   正方行列 \(A\) とその転置行列 \(A^\top\) について、
   \[|A^\top|=|A|.\]
 \end{thm}
@@ -350,47 +350,52 @@
 
 \begin{proof}
   \(A=(a_{ij}),\) \(B=(b_{ij})\) を \(n\) 次の正方行列とする。
-  \(B\) を行ベクトル \(\bm{b_i}\) \((i=1,\cdots,n)\) で表すと、
-  \(AB\) の第 \(i\) 行は、
+
+  \(A\) を列ベクトル \(\bm{a_i}\) \((i=1,\cdots,n)\) で表すと、
+  \(AB\) の第 \(i\) 列は、
   \begin{gather*}
     \begin{pmatrix}
-      \displaystyle\sum_{k=1}^n a_{ik}b_{k1} & \displaystyle\sum_{k=1}^n a_{ik}b_{k2} & \cdots & \displaystyle\sum_{k=1}^n a_{ik}b_{kn}
-    \end{pmatrix} \\
-    =\sum_{k=1}^n a_{ik}
-    \begin{pmatrix}
-      b_{k1} & b_{k2} & \cdots & b_{kn}
+      \displaystyle\sum_{k=1}^n a_{1k}b_{ki} \\
+      \displaystyle\sum_{k=1}^n a_{2k}b_{ki} \\
+      \vdots \\
+      \displaystyle\sum_{k=1}^n a_{nk}b_{ki}
     \end{pmatrix}
-    =\sum_{k=1}^n a_{ik}\bm{b_k}.
+    =\sum_{k=1}^n
+    \begin{pmatrix}
+      a_{1k} \\
+      a_{2k} \\
+      \vdots \\
+      a_{nk}
+    \end{pmatrix}
+    b_{ki}=\sum_{k=1}^n\bm{a_k}b_{ki}.
   \end{gather*}
   ゆえに、
-  \[AB=
+  \[
+    AB=
     \begin{pmatrix}
-      \displaystyle\sum_{k_1=1}^n a_{1 k_1}\bm{b_{k_1}} \\
-      \displaystyle\sum_{k_2=1}^n a_{2 k_2}\bm{b_{k_2}} \\
-      \vdots                                            \\
-      \displaystyle\sum_{k_n=1}^n a_{n k_N}\bm{b_{k_n}}
+      \displaystyle\sum_{k_1=1}^n\bm{a_{k_1}}b_{k_1 1} &
+      \displaystyle\sum_{k_2=1}^n\bm{a_{k_2}}b_{k_2 2} &
+      \cdots                                           &
+      \displaystyle\sum_{k_n=1}^n\bm{a_{k_n}}b_{k_n n}
     \end{pmatrix}.
   \]
   よって、
-  \[|AB|=\sum_{k_1=1}^n\ldots\sum_{k_n=1}^n a_{1 p_{k_1}}\cdots a_{n p_{k_n}}
+  \[
+    |AB|=
+    \sum_{k_1=1}^n\ldots\sum_{k_n=1}^n
     \begin{vmatrix}
-      \bm{b_{p_{k_1}}} \\
-      \bm{b_{p_{k_2}}} \\
-      \vdots           \\
-      \bm{b_{p_{k_n}}}
-    \end{vmatrix}.
+      \bm{a_{p_{k_1}}} & \cdots & \bm{a_{p_{k_n}}}
+    \end{vmatrix}
+    b_{p_{k_1} 1}\cdots b_{p_{k_n} n}.
   \]
-  ここで、\(p_{k_1},\ldots,p_{k_n}\) の中に同じものがあれば \(
-  \begin{vmatrix}
-      \bm{b_{p_{k_1}}} \\
-      \bm{b_{p_{k_2}}} \\
-      \vdots           \\
-      \bm{b_{p_{k_n}}}
-  \end{vmatrix}
-  =0\) であるので、
+  ただし、\(p\) は置換ではない。
+
+  ここで \(p_{k_1},\ldots,p_{k_n}\) の中に同じものがあれば、この式の中の行列式は \(0\) であるので、
   総和は任意の順列 \(\langle q_1,\ldots,q_n\rangle\) のみに関するものと見なしてよい。
-  ゆえに、補題 \ref{251221005801} より
-  \[|AB|=\sum_{\langle q_1,\ldots,q_n\rangle}\mathrm{sgn}\langle q_1,\ldots,q_n\rangle a_{1 q_1}a_{2 q_2}\cdots a_{n q_n}|B|=|A||B|.\]
+  ゆえに、\(p_{k_i}\) \((i=1,\ldots,n)\) は \(q_i\) と表されるので、補題 \ref{251221005801} によって行列式の \(\bm{a_{q_i}}\) を \(q_i\) について昇順になるよう整列して、
+  \[|AB|=|A|\sum_{\langle q_1,\ldots,q_n\rangle}\mathrm{sgn}\langle q_1,\ldots,q_n\rangle b_{q_1 1}\cdots b_{q_n n}=|A||B^\top|.\]
+
+  定理 \ref{260111170401} より、\(|AB|=|A||B|.\)
 \end{proof}
 
 \begin{dfn}[小行列式、余因子]
@@ -465,7 +470,7 @@
         0          & \cdots     & 0          & a_{1n} \\
         a_{21}     & \cdots     & a_{2\,n-1} & a_{2n} \\
         \vdots     &            & \vdots     & \vdots \\
-        a_{n1}     & a_{n2}     & a_{n\,n-1} & a_{nn}
+        a_{n1}     & \cdots     & a_{n\,n-1} & a_{nn}
       \end{vmatrix}. \label{251220164801}
   \end{gather}
   式 \eqref{251220164801} の第 \(1\) 項は、補題 \ref{251220165401} より、\(a_{11}\tilde{a}_{11}\) に等しい。
@@ -503,7 +508,7 @@
 \end{thm}
 
 \begin{proof}
-  転置行列を考えれば \ref{251221033702} は \ref{251221033701} に帰着されるので、\ref{251221033702} のみを示す。
+  転置行列を考えれば \ref{251221033702} は \ref{251221033701} に帰着されるので、\ref{251221033701} のみを示す。
 
   \(k=l\) ならば展開公式そのものである。
   それゆえ、\(k\neq l\) とする。
